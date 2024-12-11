@@ -1,0 +1,7 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"sprite_tileset2","order":2,"path":"sprites/sprite_tileset2/sprite_tileset2.yy",},
+    {"name":"tileset_tileset2","order":3,"path":"tilesets/tileset_tileset2/tileset_tileset2.yy",},
+  ],
+}
