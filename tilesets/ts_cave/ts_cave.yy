@@ -8,9 +8,9 @@
     "TileSerialiseData":[],
   },
   "name":"ts_cave",
-  "out_columns":10,
-  "out_tilehborder":2,
-  "out_tilevborder":2,
+  "out_columns":7,
+  "out_tilehborder":0,
+  "out_tilevborder":0,
   "parent":{
     "name":"Tile Sets",
     "path":"folders/Tile Sets.yy",
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_cave_tiles",
-    "path":"sprites/spr_cave_tiles/spr_cave_tiles.yy",
+    "name":"spr_cave",
+    "path":"sprites/spr_cave/spr_cave.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -34,5 +34,5 @@
   "tileWidth":16,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":104,
+  "tile_count":56,
 }

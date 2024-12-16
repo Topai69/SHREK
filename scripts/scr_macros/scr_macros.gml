@@ -1,4 +1,5 @@
 #macro RIGHT 0
-#macro UP 1
-#macro LEFT 2
-#macro DOWN 3
+#macro LEFT 1
+#macro WALL_RIGHT 2
+#macro WALL_LEFT 3
+#macro CHECKPOINT_SET 4
