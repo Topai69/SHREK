@@ -8,7 +8,7 @@
     "children":[],
     "name":"Default",
   },
-  "defaultScriptType":0,
+  "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -37,6 +37,13 @@
     {"id":{"name":"obj_character","path":"objects/obj_character/obj_character.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"obj_message_2","path":"objects/obj_message_2/obj_message_2.yy",},},
+    {"id":{"name":"obj_movingPlatform","path":"objects/obj_movingPlatform/obj_movingPlatform.yy",},},
+    {"id":{"name":"obj_oneway_platform","path":"objects/obj_oneway_platform/obj_oneway_platform.yy",},},
+    {"id":{"name":"obj_platformPoint","path":"objects/obj_platformPoint/obj_platformPoint.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_stalagmite","path":"objects/obj_stalagmite/obj_stalagmite.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
@@ -51,11 +58,19 @@
     {"id":{"name":"spr_enemy","path":"sprites/spr_enemy/spr_enemy.yy",},},
     {"id":{"name":"spr_ground_1","path":"sprites/spr_ground_1/spr_ground_1.yy",},},
     {"id":{"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},},
+<<<<<<< Updated upstream
     {"id":{"name":"spr_player_down","path":"sprites/spr_player_down/spr_player_down.yy",},},
     {"id":{"name":"spr_player_left","path":"sprites/spr_player_left/spr_player_left.yy",},},
     {"id":{"name":"spr_player_right","path":"sprites/spr_player_right/spr_player_right.yy",},},
     {"id":{"name":"spr_player_up","path":"sprites/spr_player_up/spr_player_up.yy",},},
     {"id":{"name":"spr_player2","path":"sprites/spr_player2/spr_player2.yy",},},
+=======
+    {"id":{"name":"spr_message_1","path":"sprites/spr_message_1/spr_message_1.yy",},},
+    {"id":{"name":"spr_message_2","path":"sprites/spr_message_2/spr_message_2.yy",},},
+    {"id":{"name":"spr_movingPlatform","path":"sprites/spr_movingPlatform/spr_movingPlatform.yy",},},
+    {"id":{"name":"spr_oneway_platform","path":"sprites/spr_oneway_platform/spr_oneway_platform.yy",},},
+    {"id":{"name":"spr_platformPoint","path":"sprites/spr_platformPoint/spr_platformPoint.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_stalagmite","path":"sprites/spr_stalagmite/spr_stalagmite.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
     {"id":{"name":"spr_wall1","path":"sprites/spr_wall1/spr_wall1.yy",},},
