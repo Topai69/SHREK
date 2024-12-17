@@ -1,10 +1,18 @@
-var _targetX = endX;
-var _targetY = endY;
-if(goingToStart){
-	_targetX = startX;
-	_targetY = startY;
-}
+if (!point_found) {
+    var startPoint = instance_find(obj_platformPoint, 0); // Trova il primo punto
+    var endPoint = instance_find(obj_platformPoint, 1);   // Trova il secondo punto
+    
+    if (startPoint != noone && endPoint != noone) {
+        // Assegna i punti
+        startX = startPoint.x;
+        startY = startPoint.y;
+        endX = endPoint.x;
+        endY = endPoint.y;
 
-//movement
-moveX = sign(_targetX - x) * currentSpeed;
-moveY = sign(_targetY - y) * currentSpeed;
+        // Imposta la posizione iniziale della piattaforma
+        x = startX;
+        y = startY;
+        
+        point_found = true; // I punti sono stati trovati
+    }
+}
