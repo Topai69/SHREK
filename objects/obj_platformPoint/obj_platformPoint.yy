@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_wall",
+  "%Name":"obj_platformPoint",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_wall",
+  "name":"obj_platformPoint",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -25,14 +25,17 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"platformID","filters":[],"listItems":[],"multiselect":false,"name":"platformID","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"startingPoint","filters":[],"listItems":[],"multiselect":false,"name":"startingPoint","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_wall",
-    "path":"sprites/spr_wall/spr_wall.yy",
+    "name":"spr_platformPoint",
+    "path":"sprites/spr_platformPoint/spr_platformPoint.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
