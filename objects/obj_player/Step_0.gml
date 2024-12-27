@@ -119,6 +119,20 @@ if place_meeting(x - 1, y, obj_wall) {
 }
 
 ////////////////////////////////////////////////
+// FALLING SPIKES
+////////////////////////////////////////////////
+if (place_meeting(x, y, obj_stalagmite)) {
+		var spike = instance_place(x + max(1, xspeed), y, obj_stalagmite);
+		instance_destroy(spike);
+        health -= 1; // reduce health
+        show_debug_message("player health: " + string(health));
+
+        if (health <= 0) {
+             game_restart(); // restart game if player health is 0
+          }
+}
+
+////////////////////////////////////////////////
 // HANDLE JUMP INPUT
 ////////////////////////////////////////////////
 if can_jump == true && jump_key_pressed && jump_counter < jump_max {

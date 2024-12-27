@@ -1,5 +1,6 @@
 xspeed = 0;
 yspeed = 0;
+health = 3;
 
 
 move_speed = 1;
