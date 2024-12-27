@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureGroup>
+  <texture scale="1" mipsToGenerate="0" texwidth="1024" texheight="512">default_0.bz2</texture>
+  <tpe x="2" y="2" tpage="default_0.bz2">spr_message_2_BLANK GAME_2_d04d5d18-c07e-4980-add4-d1565d8aa415.tpe</tpe>
+  <tpe x="2" y="183" tpage="default_0.bz2">spr_message_1_BLANK GAME_2_a1421df8-7cc0-42ed-8270-c4d91bb29944.tpe</tpe>
+  <tpe x="724" y="183" tpage="default_0.bz2">spr_cave_tiles_BLANK GAME_2_7e3ca47b-3c0a-4a03-a8f9-613b5e428752.tpe</tpe>
+  <tpe x="2" y="395" tpage="default_0.bz2">spr_cave_BLANK GAME_2_3e3648b0-01f9-4885-9829-c6d9d21dd9c8.tpe</tpe>
+  <tpe x="136" y="366" tpage="default_0.bz2">ts_cave_BLANK GAME_2_output_tileset.tpe</tpe>
+  <tpe x="254" y="395" tpage="default_0.bz2">spr_stalagmite_BLANK GAME_2_376dae6e-7081-46e5-8880-fa653f46ae94.tpe</tpe>
+  <tpe x="254" y="431" tpage="default_0.bz2">spr_walking_left_BLANK GAME_2_252b6c77-2195-4976-9c2a-fb4edb9961ba.tpe</tpe>
+  <tpe x="254" y="464" tpage="default_0.bz2">spr_walking_left_BLANK GAME_2_3383aee0-b3b8-4aa4-98af-80e2c044780a.tpe</tpe>
+  <tpe x="273" y="395" tpage="default_0.bz2">spr_walking_left_BLANK GAME_2_7ac29b52-5a13-4ad2-902e-9b0f3dd4a54e.tpe</tpe>
+  <tpe x="274" y="428" tpage="default_0.bz2">spr_walking_right_BLANK GAME_2_252b6c77-2195-4976-9c2a-fb4edb9961ba.tpe</tpe>
+  <tpe x="274" y="461" tpage="default_0.bz2">spr_walking_right_BLANK GAME_2_3383aee0-b3b8-4aa4-98af-80e2c044780a.tpe</tpe>
+  <tpe x="294" y="364" tpage="default_0.bz2">spr_walking_right_BLANK GAME_2_7ac29b52-5a13-4ad2-902e-9b0f3dd4a54e.tpe</tpe>
+  <tpe x="314" y="364" tpage="default_0.bz2">spr_wall_slide_left_BLANK GAME_2_2be7ab95-f673-4d56-979a-da2716e4f967.tpe</tpe>
+  <tpe x="294" y="397" tpage="default_0.bz2">spr_wall_slide_right_BLANK GAME_2_de4ac57b-84d6-40db-b6f9-1202cb1d82c2.tpe</tpe>
+  <tpe x="334" y="364" tpage="default_0.bz2">spr_walking_left_BLANK GAME_2_0362aa8c-95bc-418a-8839-a29247e1e739.tpe</tpe>
+  <tpe x="314" y="397" tpage="default_0.bz2">spr_walking_left_BLANK GAME_2_288f253c-7af1-487e-b588-207cba5fda98.tpe</tpe>
+  <tpe x="294" y="430" tpage="default_0.bz2">spr_walking_left_BLANK GAME_2_29ddd7e3-6743-45a2-8bdf-bb21a2921c93.tpe</tpe>
+  <tpe x="354" y="364" tpage="default_0.bz2">spr_walking_right_BLANK GAME_2_0362aa8c-95bc-418a-8839-a29247e1e739.tpe</tpe>
+  <tpe x="334" y="396" tpage="default_0.bz2">spr_walking_right_BLANK GAME_2_288f253c-7af1-487e-b588-207cba5fda98.tpe</tpe>
+  <tpe x="314" y="429" tpage="default_0.bz2">spr_walking_right_BLANK GAME_2_29ddd7e3-6743-45a2-8bdf-bb21a2921c93.tpe</tpe>
+  <tpe x="2" y="364" tpage="default_0.bz2">Sprite19_BLANK GAME_2_4e4c6f79-1e47-4c34-a5e6-a892e7ec47db.tpe</tpe>
+  <tpe x="274" y="494" tpage="default_0.bz2">spr_ground_BLANK GAME_2_696e4acc-1aaa-41af-b523-4c858fe92e12.tpe</tpe>
+  <tpe x="254" y="364" tpage="default_0.bz2">spr_semisolid1_BLANK GAME_2_bf95da07-a452-4433-b9b1-5e962d7f92fa.tpe</tpe>
+  <tpe x="294" y="462" tpage="default_0.bz2">spr_movingPlatform_BLANK GAME_2_c0242496-f0b1-4b93-8560-1e1c95a42744.tpe</tpe>
+  <tpe x="374" y="364" tpage="default_0.bz2">spr_oneway_platform_BLANK GAME_2_2e90ec53-327e-4060-843b-fa0d5b2a3c5a.tpe</tpe>
+  <tpe x="374" y="395" tpage="default_0.bz2">spr_wall_BLANK GAME_2_c3137998-0dc8-4073-924c-d85c35a53cdd.tpe</tpe>
+  <tpe x="334" y="428" tpage="default_0.bz2">spr_wall1_BLANK GAME_2_4f405a98-211a-4fed-b030-d21cd59d797a.tpe</tpe>
+  <tpe x="23" y="364" tpage="default_0.bz2">spr_platformPoint_BLANK GAME_2_79df272a-405d-4b89-95fe-ddd1820f0d7f.tpe</tpe>
+  <tpe x="851" y="2" tpage="default_0.bz2">spr_ground_1_BLANK GAME_2_0eb97a24-4218-4512-85ee-5b4a6cf3e73e.tpe</tpe>
+  <tpe x="2" y="384" tpage="default_0.bz2">spr_jump_BLANK GAME_2_11649462-8fec-45dd-97f5-03908a979996.tpe</tpe>
+</TextureGroup>

@@ -32,7 +32,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"BLANK GAME_2",
   "resources":[
@@ -59,6 +59,7 @@
     {"id":{"name":"spr_movingPlatform","path":"sprites/spr_movingPlatform/spr_movingPlatform.yy",},},
     {"id":{"name":"spr_oneway_platform","path":"sprites/spr_oneway_platform/spr_oneway_platform.yy",},},
     {"id":{"name":"spr_platformPoint","path":"sprites/spr_platformPoint/spr_platformPoint.yy",},},
+    {"id":{"name":"spr_semisolid1","path":"sprites/spr_semisolid1/spr_semisolid1.yy",},},
     {"id":{"name":"spr_stalagmite","path":"sprites/spr_stalagmite/spr_stalagmite.yy",},},
     {"id":{"name":"spr_walking_left","path":"sprites/spr_walking_left/spr_walking_left.yy",},},
     {"id":{"name":"spr_walking_right","path":"sprites/spr_walking_right/spr_walking_right.yy",},},
@@ -66,6 +67,7 @@
     {"id":{"name":"spr_wall_slide_right","path":"sprites/spr_wall_slide_right/spr_wall_slide_right.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
     {"id":{"name":"spr_wall1","path":"sprites/spr_wall1/spr_wall1.yy",},},
+    {"id":{"name":"Sprite19","path":"sprites/Sprite19/Sprite19.yy",},},
     {"id":{"name":"ts_cave","path":"tilesets/ts_cave/ts_cave.yy",},},
   ],
   "resourceType":"GMProject",

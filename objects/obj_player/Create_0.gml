@@ -1,8 +1,9 @@
 xspeed = 0;
 yspeed = 0;
 
+
 move_speed = 1;
-//grav = 0.2;
+grav = 0.2;
 
 //jumping
 jump_speed = -1.5;
@@ -24,4 +25,6 @@ sprite[WALL_LEFT] = spr_wall_slide_left;
 
 face = RIGHT;
 current_platform = noone;
+
+//moving platform
 
