@@ -119,19 +119,25 @@ if place_meeting(x - 1, y, obj_wall) {
 }
 
 ////////////////////////////////////////////////
-// BOX INTERACTION LOGIC
+// MOVING BOX LOGIC
 ////////////////////////////////////////////////
 
-if (keyboard_check(vk_space)) {
+if (keyboard_check(ord("E"))) {
     // check if the player is colliding with a box
     if (place_meeting(x + xspeed * move_speed, y + yspeed * move_speed, obj_box)) {
         var box = instance_place(x + xspeed * move_speed, y + yspeed * move_speed, obj_box);
 
         // move the box if no wall is blocking it
         if (box != noone) {
-            if (!place_meeting(box.x + xspeed * move_speed, box.y + yspeed * move_speed, obj_wall)) {
-                box.x += xspeed * move_speed;
-                box.y += yspeed * move_speed;
+            var new_x = box.x + xspeed * move_speed;
+            var new_y = box.y + yspeed * move_speed;
+
+            // check for collisions with walls and ground
+            if (!place_meeting(new_x, box.y, obj_wall) && !place_meeting(new_x, box.y, obj_ground)) {
+                box.x = new_x;
+            }
+            if (!place_meeting(box.x, new_y, obj_wall) && !place_meeting(box.x, new_y, obj_ground)) {
+                box.y = new_y;
             }
         }
     }
