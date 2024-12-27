@@ -10,11 +10,6 @@ if (place_meeting(x + xspeed, y, obj_wall)) {
     xspeed = 0;
 }
 
-// check for collisions with the player
-if (place_meeting(x, y, obj_player)) {
-    // handle collision with player (e.g., push the player back)
-}
-
 // apply movement
 x += xspeed;
 y += yspeed;
