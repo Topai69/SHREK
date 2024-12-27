@@ -1,6 +1,6 @@
 xspeed = 0;
 yspeed = 0;
-health = 3;
+health = 4;
 
 
 move_speed = 1;
@@ -24,7 +24,7 @@ sprite[LEFT] = spr_walking_left;
 sprite[WALL_RIGHT] = spr_wall_slide_right;
 sprite[WALL_LEFT] = spr_wall_slide_left;
 
-face = RIGHT;
+face = RIGHT;  
 current_platform = noone;
 
 //moving platform

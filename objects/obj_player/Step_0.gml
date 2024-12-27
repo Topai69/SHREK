@@ -119,6 +119,25 @@ if place_meeting(x - 1, y, obj_wall) {
 }
 
 ////////////////////////////////////////////////
+// BOX INTERACTION LOGIC
+////////////////////////////////////////////////
+
+if (keyboard_check(vk_space)) {
+    // check if the player is colliding with a box
+    if (place_meeting(x + xspeed * move_speed, y + yspeed * move_speed, obj_box)) {
+        var box = instance_place(x + xspeed * move_speed, y + yspeed * move_speed, obj_box);
+
+        // move the box if no wall is blocking it
+        if (box != noone) {
+            if (!place_meeting(box.x + xspeed * move_speed, box.y + yspeed * move_speed, obj_wall)) {
+                box.x += xspeed * move_speed;
+                box.y += yspeed * move_speed;
+            }
+        }
+    }
+}
+
+////////////////////////////////////////////////
 // FALLING SPIKES
 ////////////////////////////////////////////////
 if (place_meeting(x, y, obj_stalagmite)) {
