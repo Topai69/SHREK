@@ -1,3 +1,3 @@
 xspeed = 0;
 yspeed = 0;
-gravity = 0;
+grav = 0.5;
