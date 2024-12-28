@@ -1,11 +1,11 @@
-// apply gravity only if not on the ground
+// apply gravity to the box
 if (!place_meeting(x, y + 1, obj_ground)) {
     yspeed += gravity;
 } else {
     yspeed = 0;
 }
 
-// check for collisions with walls
+// stop the box if it hits a wall
 if (place_meeting(x + xspeed, y, obj_wall)) {
     xspeed = 0;
 }

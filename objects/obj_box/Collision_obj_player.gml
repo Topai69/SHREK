@@ -9,7 +9,7 @@ if (!keyboard_check(ord("E"))) {
     if (other.y > y) {
         other.y = y + sprite_height;
     } else if (other.y < y) {
-        other.y = y - other.sprite_height;
+        other.y = y - sprite_height;
     }
 } else {
     // push the box in the direction of the player's movement
