@@ -1,11 +1,11 @@
 xspeed = 0;
 yspeed = 0;
-checkpoint_activated = false;
-move_speed = 1;
+move_speed = 1.3;
 grav = 0.2;
-
+wall_slide_timer_left = 0;
+wall_slide_timer_right = 0;
 //jumping
-jump_speed = -1.5;
+jump_speed = -2;
 jump_max = 2;
 jump_counter = 0;
 can_jump = true;
@@ -15,14 +15,15 @@ touched_wall_left = 0;
 touched_wall_right = 0;
 //collision
 has_collided = false;
-
 //face_orientation
 sprite[RIGHT] = spr_walking_right;
 sprite[LEFT] = spr_walking_left;
 sprite[WALL_RIGHT] = spr_wall_slide_right;
 sprite[WALL_LEFT] = spr_wall_slide_left;
+sprite[JUMP_LEFT] = spr_jump_left;
+sprite[JUMP_RIGHT] = spr_jump_right;
+
 face = RIGHT;
-sprite[CHECKPOINT_SET] = spr_checkpoint_tree;
 
 /////respawn
 checkpoint = 1;

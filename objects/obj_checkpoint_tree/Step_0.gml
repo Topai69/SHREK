@@ -1,13 +1,9 @@
-if !checkpoint_activated
+if animation_played == false image_index = 0;
+if (activated == true && animation_played == false) 
 {
-	image_index = 0;
-}
-if checkpoint_activated
-{
-    // Play the animation by changing the sprite to an animated sprite
-    image_index = 5;  // Start the animation from the first frame
-    image_speed = 0.1;  // Set the speed of the animation (adjust as needed)
-    
-    // Mark that the checkpoint animation has been activated
-    checkpoint_activated = true;
+    if (image_index >= image_number - 1) { // Check if the animation reached the last frame
+        image_speed = 0;                  // Stop the animation
+        animation_played = true;                // Mark as activated
+        image_index = image_number - 1;   // Ensure the last frame is displayed
+	}
 }
