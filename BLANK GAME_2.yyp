@@ -8,7 +8,7 @@
     "children":[],
     "name":"Default",
   },
-  "defaultScriptType":0,
+  "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -32,10 +32,11 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"BLANK GAME_2",
   "resources":[
+<<<<<<< HEAD
     {"id":{"name":"obj_checkpoint_tree","path":"objects/obj_checkpoint_tree/obj_checkpoint_tree.yy",},},
     {"id":{"name":"obj_colorblindness","path":"objects/obj_colorblindness/obj_colorblindness.yy",},},
     {"id":{"name":"obj_fella","path":"objects/obj_fella/obj_fella.yy",},},
@@ -45,20 +46,36 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_space","path":"objects/obj_space/obj_space.yy",},},
     {"id":{"name":"obj_spawn_point","path":"objects/obj_spawn_point/obj_spawn_point.yy",},},
+=======
+    {"id":{"name":"obj_box","path":"objects/obj_box/obj_box.yy",},},
+    {"id":{"name":"obj_colorblindness","path":"objects/obj_colorblindness/obj_colorblindness.yy",},},
+    {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},},
+    {"id":{"name":"obj_message_2","path":"objects/obj_message_2/obj_message_2.yy",},},
+    {"id":{"name":"obj_movingPlatform","path":"objects/obj_movingPlatform/obj_movingPlatform.yy",},},
+    {"id":{"name":"obj_oneway_platform","path":"objects/obj_oneway_platform/obj_oneway_platform.yy",},},
+    {"id":{"name":"obj_platformPoint","path":"objects/obj_platformPoint/obj_platformPoint.yy",},},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"obj_space","path":"objects/obj_space/obj_space.yy",},},
+>>>>>>> main
     {"id":{"name":"obj_stalagmite","path":"objects/obj_stalagmite/obj_stalagmite.yy",},},
     {"id":{"name":"obj_void","path":"objects/obj_void/obj_void.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"obj_wall1","path":"objects/obj_wall1/obj_wall1.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},
+<<<<<<< HEAD
     {"id":{"name":"spr_autotile","path":"sprites/spr_autotile/spr_autotile.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
+=======
+    {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},
+>>>>>>> main
     {"id":{"name":"spr_cave_tiles","path":"sprites/spr_cave_tiles/spr_cave_tiles.yy",},},
     {"id":{"name":"spr_cave","path":"sprites/spr_cave/spr_cave.yy",},},
     {"id":{"name":"spr_checkpoint_tree","path":"sprites/spr_checkpoint_tree/spr_checkpoint_tree.yy",},},
     {"id":{"name":"spr_fella","path":"sprites/spr_fella/spr_fella.yy",},},
     {"id":{"name":"spr_ground_1","path":"sprites/spr_ground_1/spr_ground_1.yy",},},
     {"id":{"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},},
+<<<<<<< HEAD
     {"id":{"name":"spr_jump_left","path":"sprites/spr_jump_left/spr_jump_left.yy",},},
     {"id":{"name":"spr_jump_right","path":"sprites/spr_jump_right/spr_jump_right.yy",},},
     {"id":{"name":"spr_jump","path":"sprites/spr_jump/spr_jump.yy",},},
@@ -68,13 +85,27 @@
     {"id":{"name":"spr_spawn_point","path":"sprites/spr_spawn_point/spr_spawn_point.yy",},},
     {"id":{"name":"spr_stalagmite","path":"sprites/spr_stalagmite/spr_stalagmite.yy",},},
     {"id":{"name":"spr_void","path":"sprites/spr_void/spr_void.yy",},},
+=======
+    {"id":{"name":"spr_jump","path":"sprites/spr_jump/spr_jump.yy",},},
+    {"id":{"name":"spr_message_1","path":"sprites/spr_message_1/spr_message_1.yy",},},
+    {"id":{"name":"spr_message_2","path":"sprites/spr_message_2/spr_message_2.yy",},},
+    {"id":{"name":"spr_movingPlatform","path":"sprites/spr_movingPlatform/spr_movingPlatform.yy",},},
+    {"id":{"name":"spr_oneway_platform","path":"sprites/spr_oneway_platform/spr_oneway_platform.yy",},},
+    {"id":{"name":"spr_platformPoint","path":"sprites/spr_platformPoint/spr_platformPoint.yy",},},
+    {"id":{"name":"spr_semisolid1","path":"sprites/spr_semisolid1/spr_semisolid1.yy",},},
+    {"id":{"name":"spr_stalagmite","path":"sprites/spr_stalagmite/spr_stalagmite.yy",},},
+>>>>>>> main
     {"id":{"name":"spr_walking_left","path":"sprites/spr_walking_left/spr_walking_left.yy",},},
     {"id":{"name":"spr_walking_right","path":"sprites/spr_walking_right/spr_walking_right.yy",},},
     {"id":{"name":"spr_wall_slide_left","path":"sprites/spr_wall_slide_left/spr_wall_slide_left.yy",},},
     {"id":{"name":"spr_wall_slide_right","path":"sprites/spr_wall_slide_right/spr_wall_slide_right.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
     {"id":{"name":"spr_wall1","path":"sprites/spr_wall1/spr_wall1.yy",},},
+<<<<<<< HEAD
     {"id":{"name":"tile_set_cave","path":"tilesets/tile_set_cave/tile_set_cave.yy",},},
+=======
+    {"id":{"name":"Sprite19","path":"sprites/Sprite19/Sprite19.yy",},},
+>>>>>>> main
     {"id":{"name":"ts_cave","path":"tilesets/ts_cave/ts_cave.yy",},},
   ],
   "resourceType":"GMProject",
