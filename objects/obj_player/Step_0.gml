@@ -1,32 +1,191 @@
 ////////////////////////////////////////////////
-// INPUTS
+//////////////////////INPUTS////////////////////
 ////////////////////////////////////////////////
 right_key = keyboard_check(ord("D")) || keyboard_check(vk_right);
 left_key = keyboard_check(ord("A")) || keyboard_check(vk_left);
 jump_key_pressed = keyboard_check_pressed(vk_space);
 jump_key_hold = keyboard_check(vk_space);
 
+var platform = instance_place(x, y + 1, obj_oneway_platform);
+
 ////////////////////////////////////////////////
 // SPEEDS AND GRAVITY
 ////////////////////////////////////////////////
 xspeed = (right_key - left_key) * move_speed;
+if face == LEFT && xspeed < 0  && !place_meeting(x,y+1,obj_ground)
+	{
+		face = JUMP_LEFT;
+	}
+if face == RIGHT && xspeed > 0  && !place_meeting(x,y+1,obj_ground)
+	{
+		face = JUMP_RIGHT;
+	}
 if yspeed > 3 yspeed = 3;
+
 yspeed += grav;
 
-////////////////////////////////////////////////
-// RESET JUMP COUNT ON COLLISION
-////////////////////////////////////////////////
-if place_meeting(x, y + 1, obj_ground) {
+///////////////////////////////////////////////////////
+////////////RESET JUMP COUNT ON COLLISION//////////////
+///////////////////////////////////////////////////////
+if place_meeting(x, y + 1, obj_ground) 
+{
     jump_counter = 0;
-    touched_wall_left = 0;
-    touched_wall_right = 0;
-    has_collided = false;
-    can_jump = true;
-    current_platform = noone; 
-} else {
+	touched_wall_left = 0;
+	touched_wall_right = 0;
+	has_collided = false;
+	can_jump = true;
+	wall_slide_timer_left = 0;
+	wall_slide_timer_right = 0;
+    current_platform = noone;
+} 
+else 
+{
     if jump_counter == 0 {
         jump_counter = 1;
     }
+}
+////////////////////////////////////////////////
+///////////// Wall jump logic///////////////////
+////////////////////////////////////////////////
+if place_meeting(x + 1, y, obj_wall1) 
+{
+	has_collided = true;
+	// Allow a single jump from walls
+	show_debug_message(yspeed);
+	touched_wall_right = 1;
+	face = WALL_RIGHT;
+	wall_slide_timer_left = 0.1;
+
+	if jump_counter == 1 && jump_key_pressed 
+	{
+        jump_counter++;
+        jump_timer = jump_hold_frames;
+        yspeed = jump_speed;
+		can_jump = true;
+    }
+
+	if touched_wall_left && jump_counter == 2
+	{
+		jump_counter = 0;
+		touched_wall_left = 0;
+		can_jump = true;
+	}
+
+	if right_key
+	{
+		wall_slide_timer_right += 0.01;
+		yspeed = wall_slide_timer_right;
+	}
+	else
+	{
+		if face == WALL_RIGHT
+		{
+			face = RIGHT
+		}
+	}
+	
+}
+if place_meeting(x - 1, y, obj_wall) 
+{
+	has_collided = true;
+	touched_wall_left = 1;
+	face = WALL_LEFT;
+	show_debug_message(yspeed);
+	wall_slide_timer_right = 0.1;
+
+	if jump_counter == 1 && jump_key_pressed 
+	{
+        jump_counter++;
+        jump_timer = jump_hold_frames;
+        yspeed = jump_speed;
+		can_jump = true;
+    }
+
+	if touched_wall_right && jump_counter == 2
+	{
+		jump_counter = 0;
+		touched_wall_right = 0;
+		can_jump = true;
+	}
+
+	if left_key 
+	{
+		wall_slide_timer_left += 0.01;
+		yspeed = wall_slide_timer_left;
+	}
+	else
+	{
+		if face == WALL_LEFT
+		{
+			face = LEFT
+		}
+	}
+	//if left_key && jump_key_pressed yspeed = jump_speed;
+}
+
+if platform {
+    // Compare y positions
+    if (obj_player.y > platform.y) 
+	{
+        object_exists(obj_oneway_platform);
+        show_debug_message("Platform exists!");
+		jump_counter = 0;
+		touched_wall_left = 0;
+		touched_wall_right = 0;
+		has_collided = false;
+		can_jump = true;
+		if place_meeting(x,y+30, obj_oneway_platform)
+		{
+			yspeed = 0;
+		}
+    } 
+	else 
+{
+    // Ensure the jump counter is set to 1 if walking off edges
+    if jump_counter == 0 {
+        jump_counter = 1;
+    }
+}
+}
+
+///////////////////////////////////////////////////////////////////
+////////////////////WALL SLIDE FACE ORIENTATION////////////////////
+///////////////////////////////////////////////////////////////////
+if place_meeting(x-1,y,obj_wall) && place_meeting(x,y+1,obj_ground)
+{
+	face = LEFT;
+}
+if place_meeting(x+1,y,obj_wall1) && place_meeting(x,y+1,obj_ground)
+{
+	face = RIGHT;
+}
+
+////////////////////////////////////////////////////////////////////
+///////////////////////HANDLE JUMP INPUT////////////////////////////
+////////////////////////////////////////////////////////////////////
+if can_jump == true && jump_key_pressed && jump_counter < jump_max 
+{
+	if face == LEFT 
+	{
+		face = JUMP_LEFT;
+	}
+	if face == RIGHT
+	{
+		face = JUMP_RIGHT;
+	}
+    // Count jumps
+    jump_counter++;
+    jump_timer = jump_hold_frames;
+    yspeed = jump_speed; // Make sure to update yspeed
+}
+
+if !jump_key_hold {
+    jump_timer = 0;
+}
+
+if jump_timer > 0 {
+    yspeed = jump_speed;
+    jump_timer--;
 }
 
 ////////////////////////////////////////////////
@@ -65,57 +224,6 @@ if place_meeting(x, y + yspeed, obj_movingPlatform) {
         y += sign(yspeed);
     }
     yspeed = 0;
-}
-
-////////////////////////////////////////////////
-// WALL JUMP LOGIC
-////////////////////////////////////////////////
-if place_meeting(x + 1, y, obj_wall1) {
-    has_collided = true;
-    touched_wall_right = 1;
-    face = WALL_RIGHT;
-
-    if jump_counter == 1 && jump_key_pressed {
-        jump_counter++;
-        jump_timer = jump_hold_frames;
-        yspeed = jump_speed;
-        can_jump = true;
-    }
-
-    if touched_wall_left && jump_counter == 2 {
-        jump_counter = 1;
-        touched_wall_left = 0;
-        can_jump = false;
-    }
-    if right_key {
-        yspeed = 1;
-    } else if face == WALL_RIGHT {
-        face = RIGHT;
-    }
-}
-
-if place_meeting(x - 1, y, obj_wall) {
-    has_collided = true;
-    touched_wall_left = 1;
-    face = WALL_LEFT;
-
-    if jump_counter == 1 && jump_key_pressed {
-        jump_counter++;
-        jump_timer = jump_hold_frames;
-        yspeed = jump_speed;
-        can_jump = true;
-    }
-
-    if touched_wall_right && jump_counter == 2 {
-        jump_counter = 1;
-        touched_wall_right = 0;
-        can_jump = false;
-    }
-    if left_key {
-        yspeed = 1;
-    } else if face == WALL_LEFT {
-        face = LEFT;
-    }
 }
 
 ////////////////////////////////////////////////
@@ -180,23 +288,15 @@ if (place_meeting(x, y, obj_stalagmite)) {
           }
 }
 
-////////////////////////////////////////////////
-// HANDLE JUMP INPUT
-////////////////////////////////////////////////
-if can_jump == true && jump_key_pressed && jump_counter < jump_max {
-    jump_counter++;
-    current_platform = noone; // Leave the platform
-    jump_timer = jump_hold_frames;
-    yspeed = jump_speed; // Make sure to update yspeed
-}
-
-if !jump_key_hold {
-    jump_timer = 0;
-}
-
-if jump_timer > 0 {
-    yspeed = jump_speed;
-    jump_timer--;
+//////////////////////////////////////////////////////////////////////
+////////////////////VOID RESPAWN AND CHECKPOINTS//////////////////////
+//////////////////////////////////////////////////////////////////////
+if place_meeting(x,y, obj_void)
+{
+	// Respawn player at last checkpoint
+    obj_player.x = global.checkpoint_x;  // Set the player's x position to the last checkpoint's x 
+    obj_player.y = global.checkpoint_y;  // Set the player's y position to the last checkpoint's y
+	camera_set_view_pos(view_camera[0],0,0);
 }
 
 ////////////////////////////////////////////////
@@ -213,6 +313,7 @@ if xspeed < 0 {
 ////////////////////////////////////////////////
 // COLLISION
 ////////////////////////////////////////////////
+//if place_meeting(x + xspeed, y, obj_ground) {
 if place_meeting(x + xspeed, y, obj_ground) || place_meeting(x + xspeed, y, obj_movingPlatform) {
     var _pixelCheck = sign(xspeed);
     while !place_meeting(x + _pixelCheck, y, obj_ground) && !place_meeting(x + _pixelCheck, y, obj_movingPlatform) {

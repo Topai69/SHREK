@@ -1,13 +1,16 @@
 xspeed = 0;
 yspeed = 0;
-health = 4;
-
-
-move_speed = 1;
+move_speed = 1.3;
 grav = 0.2;
 
+//wall slide mechanics
+wall_slide_timer_left = 0;
+wall_slide_timer_right = 0;
+
 //jumping
-jump_speed = -1.5;
+jump_speed = -2;
+health = 4;
+
 jump_max = 2;
 jump_counter = 0;
 can_jump = true;
@@ -23,9 +26,14 @@ sprite[RIGHT] = spr_walking_right;
 sprite[LEFT] = spr_walking_left;
 sprite[WALL_RIGHT] = spr_wall_slide_right;
 sprite[WALL_LEFT] = spr_wall_slide_left;
+sprite[JUMP_LEFT] = spr_jump_left;
+sprite[JUMP_RIGHT] = spr_jump_right;
 
-face = RIGHT;  
+face = RIGHT;
+
+/////respawn
+checkpoint = 1;
+ 
 current_platform = noone;
 
-//moving platform
 
