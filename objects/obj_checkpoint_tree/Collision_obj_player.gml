@@ -1,4 +1,7 @@
-if (animation_played == false) { // Play the animation only once
+if (animation_played == false) {
     activated = true;
-    image_speed = 1;     // Start the animation
+    image_speed = 1;
+    global.checkpoint_x = x;
+    global.checkpoint_y = y;
+    animation_played = true;
 }

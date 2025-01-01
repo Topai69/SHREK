@@ -7,6 +7,10 @@ grav = 0.2;
 wall_slide_timer_left = 0;
 wall_slide_timer_right = 0;
 
+//global checkpoint for respawn
+global.checkpoint_x = x;  
+global.checkpoint_y = y;
+
 //jumping
 jump_speed = -2;
 health = 4;
