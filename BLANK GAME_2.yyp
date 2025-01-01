@@ -74,6 +74,7 @@
     {"id":{"name":"spr_spawn_point","path":"sprites/spr_spawn_point/spr_spawn_point.yy",},},
     {"id":{"name":"spr_stalagmite","path":"sprites/spr_stalagmite/spr_stalagmite.yy",},},
     {"id":{"name":"spr_void","path":"sprites/spr_void/spr_void.yy",},},
+    {"id":{"name":"spr_walking_left","path":"sprites/spr_walking_left/spr_walking_left.yy",},},
     {"id":{"name":"spr_walking_right","path":"sprites/spr_walking_right/spr_walking_right.yy",},},
     {"id":{"name":"spr_wall_slide_left","path":"sprites/spr_wall_slide_left/spr_wall_slide_left.yy",},},
     {"id":{"name":"spr_wall_slide_right","path":"sprites/spr_wall_slide_right/spr_wall_slide_right.yy",},},
