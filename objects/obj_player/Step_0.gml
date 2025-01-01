@@ -302,17 +302,42 @@ if place_meeting(x,y, obj_void)
 ////////////////////////////////////////////////
 // FACE ORIENTATION
 ////////////////////////////////////////////////
+var on_ground = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_movingPlatform);
+
+if (!on_ground) {
+    //in air
+    if (yspeed < 0) {
+        if (xspeed > 0) face = JUMP_RIGHT;
+        else if (xspeed < 0) face = JUMP_LEFT;
+    } else {
+        //forcing framss
+        if (xspeed > 0) {
+            face = JUMP_RIGHT;
+            if (sprite_index == spr_jump_right) {
+                image_index = 4; //falling frame
+                image_speed = 0;
+            }
+        } else if (xspeed < 0) {
+            face = JUMP_LEFT;
+            if (sprite_index == spr_jump_left) {
+                image_index = 4; //falling frame
+                image_speed = 0;
+            }
+        }
+    }
+} else {
+    //on the ground
+    image_speed = 1;
+    if (xspeed > 0) face = RIGHT;
+    else if (xspeed < 0) face = LEFT;
+}
+
 sprite_index = sprite[face];
-if xspeed > 0 {
-    face = RIGHT;
-}
-if xspeed < 0 {
-    face = LEFT;
-}
 
 ////////////////////////////////////////////////
 // COLLISION
 ////////////////////////////////////////////////
+
 //if place_meeting(x + xspeed, y, obj_ground) {
 if place_meeting(x + xspeed, y, obj_ground) || place_meeting(x + xspeed, y, obj_movingPlatform) {
     var _pixelCheck = sign(xspeed);
