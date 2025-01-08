@@ -8,6 +8,7 @@ jump_key_pressed = keyboard_check_pressed(vk_space);
 jump_key_hold = keyboard_check(vk_space);
 
 var platform = instance_place(x, y + 1, obj_oneway_platform);
+var on_ground = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_movingPlatform) || place_meeting(x,y+30, obj_oneway_platform);
 
 ////////////////////////////////////////////////
 // SPEEDS AND GRAVITY
@@ -240,11 +241,11 @@ if place_meeting(x, y + yspeed, obj_movingPlatform) {
 ////////////////////////////////////////////////
 
 if (keyboard_check(ord("E"))) {
-    // check if the player is colliding with a box
+    //check if the player is colliding with a box
     var box = instance_place(x, y, obj_box);
 
     if (box != noone) {
-        // calculate new position for the box based on player's movement
+        //calculate new position for the box based on player's movement
         var new_x = box.x;
         var new_y = box.y;
         
@@ -255,7 +256,7 @@ if (keyboard_check(ord("E"))) {
             new_y = box.y + sign(yspeed) * move_speed;
         }
 
-        // move the box if no collisions occur
+        //move the box if no collisions occur
         var can_move_box = true;
         if (place_meeting(new_x, box.y, obj_wall) || place_meeting(new_x, box.y, obj_ground)) {
             can_move_box = false;
@@ -268,7 +269,7 @@ if (keyboard_check(ord("E"))) {
             box.x = new_x;
             box.y = new_y;
         } else {
-            // block the player's movement if the box cannot move
+            //block the player's movement if the box cannot move
             xspeed = 0;
             yspeed = 0;
         }
@@ -279,7 +280,7 @@ if (keyboard_check(ord("E"))) {
         xspeed = 0;
     }
     if (place_meeting(x, y + yspeed, obj_box) && yspeed > 0) {
-        yspeed = 0; // stop falling onto the box
+        yspeed = 0; //stop falling onto the box
     }
 }
 
@@ -290,11 +291,11 @@ if (keyboard_check(ord("E"))) {
 if (place_meeting(x, y, obj_stalagmite)) {
 		var spike = instance_place(x + max(1, xspeed), y, obj_stalagmite);
 		instance_destroy(spike);
-        health -= 1; // reduce health
+        health -= 1;
         show_debug_message("player health: " + string(health));
 
         if (health <= 0) {
-             game_restart(); // restart game if player health is 0
+             game_restart(); //restart game if player health is 0
           }
 }
 
@@ -314,18 +315,22 @@ if place_meeting(x,y, obj_void)
 // FACE ORIENTATION
 ////////////////////////////////////////////////
 
-var on_ground = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_movingPlatform);
+var on_ground = place_meeting(x, y + 1, obj_ground) || 
+                place_meeting(x, y + 1, obj_movingPlatform) || 
+                place_meeting(x, y + 1, obj_oneway_platform);
 var on_wall_right = place_meeting(x + 1, y, obj_wall1);
 var on_wall_left = place_meeting(x - 1, y, obj_wall);
 
-// Wall state (highest priority)
+image_speed = 1;
+
+//wall 
 if (on_wall_right) {
     face = WALL_RIGHT;
 } 
 else if (on_wall_left) {
     face = WALL_LEFT;
 }
-// Air state
+//air 
 else if (!on_ground) {
     if (yspeed < 0) {
         if (xspeed > 0) face = JUMP_RIGHT;
@@ -345,12 +350,20 @@ else if (!on_ground) {
             }
         }
     }
-} 
-// Ground state
+}
+//ground 
 else {
-    image_speed = 1;
-    if (xspeed > 0) face = RIGHT;
-    else if (xspeed < 0) face = LEFT;
+    if (xspeed > 0) {
+        face = RIGHT;
+        xspeed = move_speed; //speed when on ground
+    }
+    else if (xspeed < 0) {
+        face = LEFT;
+        xspeed = -move_speed;
+    }
+    else {
+        xspeed = 0; //stop sliding
+    }
 }
 
 sprite_index = sprite[face];
