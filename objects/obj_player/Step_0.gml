@@ -11,7 +11,7 @@ var platform = instance_place(x, y + 1, obj_oneway_platform);
 
 ////////////////////////////////////////////////
 // SPEEDS AND GRAVITY
-////////////////////////////////////////////////
+///////////////////////////////////////////////
 
 xspeed = (right_key - left_key) * move_speed;
 if face == LEFT && xspeed < 0  && !place_meeting(x,y+1,obj_ground)
@@ -157,14 +157,14 @@ if platform {
 // WALL SLIDE FACE ORIENTATION
 ////////////////////////////////////////////////
 
-if place_meeting(x-1,y,obj_wall) && place_meeting(x,y+1,obj_ground)
+/*if place_meeting(x-1,y,obj_wall) && place_meeting(x,y+1,obj_ground)
 {
 	face = LEFT;
 }
 if place_meeting(x+1,y,obj_wall1) && place_meeting(x,y+1,obj_ground)
 {
 	face = RIGHT;
-}
+}*/
 
 ////////////////////////////////////////////////
 // HANDLE JUMP INPUT
@@ -315,30 +315,39 @@ if place_meeting(x,y, obj_void)
 ////////////////////////////////////////////////
 
 var on_ground = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_movingPlatform);
+var on_wall_right = place_meeting(x + 1, y, obj_wall1);
+var on_wall_left = place_meeting(x - 1, y, obj_wall);
 
-if (!on_ground) {
-    //in air
+// Wall state (highest priority)
+if (on_wall_right) {
+    face = WALL_RIGHT;
+} 
+else if (on_wall_left) {
+    face = WALL_LEFT;
+}
+// Air state
+else if (!on_ground) {
     if (yspeed < 0) {
         if (xspeed > 0) face = JUMP_RIGHT;
         else if (xspeed < 0) face = JUMP_LEFT;
     } else {
-        //forcing framss
         if (xspeed > 0) {
             face = JUMP_RIGHT;
             if (sprite_index == spr_jump_right) {
-                image_index = 4; //falling frame
+                image_index = 4;
                 image_speed = 0;
             }
         } else if (xspeed < 0) {
             face = JUMP_LEFT;
             if (sprite_index == spr_jump_left) {
-                image_index = 4; //falling frame
+                image_index = 4;
                 image_speed = 0;
             }
         }
     }
-} else {
-    //on the ground
+} 
+// Ground state
+else {
     image_speed = 1;
     if (xspeed > 0) face = RIGHT;
     else if (xspeed < 0) face = LEFT;
