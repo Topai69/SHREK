@@ -8,6 +8,7 @@ jump_key_pressed = keyboard_check_pressed(vk_space);
 jump_key_hold = keyboard_check(vk_space);
 
 var platform = instance_place(x, y + 1, obj_oneway_platform);
+var on_ground = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_movingPlatform) || place_meeting(x,y+30, obj_oneway_platform);
 
 ////////////////////////////////////////////////
 // SPEEDS AND GRAVITY
@@ -313,9 +314,10 @@ if place_meeting(x,y, obj_void)
 ////////////////////////////////////////////////
 // FACE ORIENTATION
 ////////////////////////////////////////////////
-
-var on_ground = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_movingPlatform);
-
+    image_speed = 1;
+    if (xspeed > 0) face = RIGHT;
+    if (xspeed < 0) face = LEFT;
+	
 if (!on_ground) {
     //in air
     if (yspeed < 0) {
@@ -337,11 +339,6 @@ if (!on_ground) {
             }
         }
     }
-} else {
-    //on the ground
-    image_speed = 1;
-    if (xspeed > 0) face = RIGHT;
-    else if (xspeed < 0) face = LEFT;
 }
 
 sprite_index = sprite[face];
