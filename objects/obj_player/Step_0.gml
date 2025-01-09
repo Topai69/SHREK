@@ -8,25 +8,42 @@ jump_key_pressed = keyboard_check_pressed(vk_space);
 jump_key_hold = keyboard_check(vk_space);
 
 var platform = instance_place(x, y + 1, obj_oneway_platform);
-var on_ground = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_movingPlatform) || place_meeting(x,y+30, obj_oneway_platform);
-
+var on_ground = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_movingPlatform) || place_meeting(x,y+30,obj_oneway_platform)
 ////////////////////////////////////////////////
 // SPEEDS AND GRAVITY
 ////////////////////////////////////////////////
 
 xspeed = (right_key - left_key) * move_speed;
-if face == LEFT && xspeed < 0  && !place_meeting(x,y+1,obj_ground)
+if face == LEFT && xspeed < 0  && on_ground == false
 	{
 		face = JUMP_LEFT;
 	}
-if face == RIGHT && xspeed > 0  && !place_meeting(x,y+1,obj_ground)
+if face == RIGHT && xspeed > 0  && on_ground == false
 	{
 		face = JUMP_RIGHT;
 	}
 if yspeed > 3 yspeed = 3;
 
 yspeed += grav;
+////////////////////////////////////////////////
+// COLLISION
+////////////////////////////////////////////////
 
+if place_meeting(x + xspeed, y, obj_ground) || place_meeting(x + xspeed, y, obj_movingPlatform) {
+    var _pixelCheck = sign(xspeed);
+    while !place_meeting(x + _pixelCheck, y, obj_ground) && !place_meeting(x + _pixelCheck, y, obj_movingPlatform) {
+        x += _pixelCheck;
+    }
+    xspeed = 0;
+}
+
+if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed, y + yspeed, obj_movingPlatform) {
+    var _pixelCheck = sign(yspeed);
+    while !place_meeting(x, y + _pixelCheck, obj_ground) && !place_meeting(x, y + _pixelCheck, obj_movingPlatform) {
+        y += _pixelCheck;
+    }
+    yspeed = 0;
+}
 ////////////////////////////////////////////////
 // RESET JUMP COUNT ON COLLISION
 ////////////////////////////////////////////////
@@ -48,7 +65,6 @@ else
         jump_counter = 1;
     }
 }
-
 ////////////////////////////////////////////////
 // WALL JUMP LOGIC
 ////////////////////////////////////////////////
@@ -59,8 +75,8 @@ if place_meeting(x + 1, y, obj_wall1)
 	// Allow a single jump from walls
 	show_debug_message(yspeed);
 	touched_wall_right = 1;
-	face = WALL_RIGHT;
 	wall_slide_timer_left = 0.1;
+	face = WALL_RIGHT;
 
 	if jump_counter == 1 && jump_key_pressed 
 	{
@@ -126,10 +142,10 @@ if place_meeting(x - 1, y, obj_wall)
 			face = LEFT
 		}
 	}
-	//if left_key && jump_key_pressed yspeed = jump_speed;
 }
 
-if platform {
+if platform 
+{
     // Compare y positions
     if (obj_player.y > platform.y) 
 	{
@@ -146,14 +162,14 @@ if platform {
 		}
     } 
 	else 
-{
+	{
     // Ensure the jump counter is set to 1 if walking off edges
-    if jump_counter == 0 {
-        jump_counter = 1;
-    }
+    if jump_counter == 0 
+		{
+			jump_counter = 1;
+		}
+	}
 }
-}
-
 ////////////////////////////////////////////////
 // WALL SLIDE FACE ORIENTATION
 ////////////////////////////////////////////////
@@ -318,31 +334,38 @@ if place_meeting(x,y, obj_void)
     if (xspeed > 0) face = RIGHT;
     if (xspeed < 0) face = LEFT;
 	
-if (!on_ground) {
+if !on_ground
+{
     //in air
-    if (yspeed < 0) {
+    if (yspeed < 0) 
+	{
         if (xspeed > 0) face = JUMP_RIGHT;
         else if (xspeed < 0) face = JUMP_LEFT;
-    } else {
+    } 
+	else 
+	{
         //forcing framss
-        if (xspeed > 0) {
+        if (xspeed > 0) 
+		{
             face = JUMP_RIGHT;
-            if (sprite_index == spr_jump_right) {
+            if (sprite_index == spr_jump_right) 
+			{
                 image_index = 4; //falling frame
                 image_speed = 0;
             }
-        } else if (xspeed < 0) {
+        } 
+		else if (xspeed < 0) 
+		{
             face = JUMP_LEFT;
-            if (sprite_index == spr_jump_left) {
+            if (sprite_index == spr_jump_left) 
+			{
                 image_index = 4; //falling frame
                 image_speed = 0;
             }
         }
     }
-}
-
+} 
 sprite_index = sprite[face];
-
 ////////////////////////////////////////////////
 // COLLISION
 ////////////////////////////////////////////////
@@ -362,7 +385,6 @@ if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed
     }
     yspeed = 0;
 }
-
 ////////////////////////////////////////////////
 // MOVE X Y
 ////////////////////////////////////////////////
