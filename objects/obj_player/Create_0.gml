@@ -14,7 +14,7 @@ global.checkpoint_y = y;
 //jumping
 jump_speed = -2;
 health = 4;
-
+on_ground = false;
 jump_max = 2;
 jump_counter = 0;
 can_jump = true;
