@@ -54,7 +54,6 @@
     {"id":{"name":"obj_void","path":"objects/obj_void/obj_void.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"obj_wall1","path":"objects/obj_wall1/obj_wall1.yy",},},
-    {"id":{"name":"obj_wallslide_border","path":"objects/obj_wallslide_border/obj_wallslide_border.yy",},},
     {"id":{"name":"Main_Menu_Room","path":"rooms/Main_Menu_Room/Main_Menu_Room.yy",},},
     {"id":{"name":"rm_greybox","path":"rooms/rm_greybox/rm_greybox.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},

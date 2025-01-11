@@ -104,10 +104,6 @@ if place_meeting(x + 1, y, obj_wall1)
 			face = RIGHT
 		}
 	}
-	if obj_player.y > obj_wallslide_border.y
-	{
-	face = RIGHT;
-	}
 }
 if place_meeting(x - 1, y, obj_wall) 
 {
@@ -142,10 +138,6 @@ if place_meeting(x - 1, y, obj_wall)
 		{
 			face = LEFT
 		}
-	}
-	if obj_player.y > obj_wallslide_border.y
-	{
-	face = LEFT;
 	}
 }
 if platform 
