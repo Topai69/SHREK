@@ -50,7 +50,7 @@ if accept_key == true
 			
 				break;
 				///controls////
-				case 2:
+				case 2: 
 			
 				break;
 				///back////
