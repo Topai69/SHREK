@@ -8,7 +8,11 @@ jump_key_pressed = keyboard_check_pressed(vk_space);
 jump_key_hold = keyboard_check(vk_space);
 
 var platform = instance_place(x, y + 1, obj_oneway_platform);
-var on_ground = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_movingPlatform) || place_meeting(x,y+30,obj_oneway_platform)
+var on_ground = place_meeting(x, y + 1, obj_ground) || 
+                place_meeting(x, y + 1, obj_movingPlatform) || 
+                place_meeting(x,y+30,obj_oneway_platform) ||
+                place_meeting(x, y + 1, obj_box);
+
 ////////////////////////////////////////////////
 // SPEEDS AND GRAVITY
 ////////////////////////////////////////////////
@@ -25,6 +29,7 @@ if face == RIGHT && xspeed > 0  && on_ground == false
 if yspeed > 3 yspeed = 3;
 
 yspeed += grav;
+
 ////////////////////////////////////////////////
 // COLLISION
 ////////////////////////////////////////////////
@@ -44,11 +49,12 @@ if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed
     }
     yspeed = 0;
 }
+
 ////////////////////////////////////////////////
 // RESET JUMP COUNT ON COLLISION
 ////////////////////////////////////////////////
 
-if place_meeting(x, y + 1, obj_ground) 
+if place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_box)
 {
     jump_counter = 0;
 	touched_wall_left = 0;
@@ -65,6 +71,7 @@ else
         jump_counter = 1;
     }
 }
+
 ////////////////////////////////////////////////
 // WALL JUMP LOGIC
 ////////////////////////////////////////////////
@@ -170,6 +177,7 @@ if platform
 		}
 	}
 }
+
 ////////////////////////////////////////////////
 // WALL SLIDE FACE ORIENTATION
 ////////////////////////////////////////////////
@@ -297,6 +305,9 @@ if (keyboard_check(ord("E"))) {
     }
     if (place_meeting(x, y + yspeed, obj_box) && yspeed > 0) {
         yspeed = 0; // stop falling onto the box
+        if (!place_meeting(x, y, obj_box)){
+            jump_counter = 0;
+        }
     }
 }
 
