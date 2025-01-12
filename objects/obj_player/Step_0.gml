@@ -54,7 +54,7 @@ if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed
 // RESET JUMP COUNT ON COLLISION
 ////////////////////////////////////////////////
 
-if place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_box)
+if place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_box) || place_meeting(x, y + 1, obj_movingPlatform)
 {
     jump_counter = 0;
 	touched_wall_left = 0;
@@ -225,19 +225,29 @@ if jump_timer > 0 {
 ////////////////////////////////////////////////
 
 var _movingPlatform = instance_place(x, y + max(1, yspeed), obj_movingPlatform);
-if (_movingPlatform && bbox_bottom <= _movingPlatform.bbox_top) {
-    // Pixel-perfect collisions
-    if (yspeed > 0) {
-        while (!place_meeting(x, y + sign(yspeed), obj_movingPlatform)) {
-            y += sign(yspeed);
-        }
+if (_movingPlatform && bbox_bottom <= _movingPlatform.bbox_top + 1) {
+    current_platform = _movingPlatform;
     
+    //reset the jump counter
+    if (yspeed >= 0) {
+        jump_counter = 0;
+        can_jump = true;
+    }
+    
+    //avoid fallin
+    if (yspeed > 0) {
+        while (!place_meeting(x, y + 1, obj_movingPlatform)) {
+            y += 1;
+        }
         yspeed = 0;
     }
     
-    // Add velocity
+    //move w platform
     x += _movingPlatform.moveX;
     y += _movingPlatform.moveY;
+
+} else {
+    current_platform = noone;
 }
 
 ////////////////////////////////////////////////
