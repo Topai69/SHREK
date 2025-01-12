@@ -32,5 +32,5 @@
     "path":"sprites/spr_void/spr_void.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
