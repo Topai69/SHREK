@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_void",
+  "%Name":"obj_ground2",
   "eventList":[],
   "managed":true,
-  "name":"obj_void",
+  "name":"obj_ground2",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,9 +28,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_void",
-    "path":"sprites/spr_void/spr_void.yy",
+    "name":"spr_ground2",
+    "path":"sprites/spr_ground2/spr_ground2.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
