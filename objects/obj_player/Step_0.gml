@@ -264,50 +264,43 @@ if place_meeting(x, y + yspeed, obj_movingPlatform) {
 // MOVING BOX LOGIC
 ////////////////////////////////////////////////
 
-if (keyboard_check(ord("E"))) {
-    // check if the player is colliding with a box
-    var box = instance_place(x, y, obj_box);
+//climbing
+if (place_meeting(x, y + yspeed, obj_box)) {
+    while (!place_meeting(x, y + sign(yspeed), obj_box)) {
+        y += sign(yspeed);
+    }
+    yspeed = 0;
+}
 
+//horinzontal box movement
+if (keyboard_check(ord("E"))) { 
+    var box = instance_place(x + xspeed, y, obj_box);
     if (box != noone) {
-        // calculate new position for the box based on player's movement
-        var new_x = box.x;
-        var new_y = box.y;
-        
-        if (xspeed != 0) {
-            new_x = box.x + sign(xspeed) * move_speed;
-        }
-        if (yspeed != 0) {
-            new_y = box.y + sign(yspeed) * move_speed;
-        }
-
-        // move the box if no collisions occur
-        var can_move_box = true;
-        if (place_meeting(new_x, box.y, obj_wall) || place_meeting(new_x, box.y, obj_ground)) {
-            can_move_box = false;
-        }
-        if (place_meeting(box.x, new_y, obj_wall) || place_meeting(box.x, new_y, obj_ground)) {
-            can_move_box = false;
-        }
-
-        if (can_move_box) {
-            box.x = new_x;
-            box.y = new_y;
+        if (!place_meeting(box.x + xspeed, box.y, obj_ground) && 
+            !place_meeting(box.x + xspeed, box.y, obj_wall) &&
+            !place_meeting(box.x + xspeed, box.y, obj_movingPlatform)) {
+            
+            box.xspeed = xspeed;
+            
+            //keep player close to the box
+            if (xspeed > 0) {
+                x = box.x - sprite_width/2; 
+            } else if (xspeed < 0) {
+                x = box.x + box.sprite_width + sprite_width/2;
+            }
         } else {
-            // block the player's movement if the box cannot move
             xspeed = 0;
-            yspeed = 0;
         }
     }
-} else {
-    // prevent passing through the box
-    if (place_meeting(x + xspeed, y, obj_box)) {
+} else { 
+    var box = instance_place(x + xspeed, y, obj_box);
+    if (box != noone) {
+        if (x < box.x) {
+            x = box.x - sprite_width/2;
+        } else {
+            x = box.x + box.sprite_width + sprite_width/2;
+        }
         xspeed = 0;
-    }
-    if (place_meeting(x, y + yspeed, obj_box) && yspeed > 0) {
-        yspeed = 0; // stop falling onto the box
-        if (!place_meeting(x, y, obj_box)){
-            jump_counter = 0;
-        }
     }
 }
 
@@ -377,6 +370,7 @@ if !on_ground
     }
 } 
 sprite_index = sprite[face];
+
 ////////////////////////////////////////////////
 // COLLISION
 ////////////////////////////////////////////////
@@ -396,6 +390,7 @@ if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed
     }
     yspeed = 0;
 }
+
 ////////////////////////////////////////////////
 // MOVE X Y
 ////////////////////////////////////////////////
