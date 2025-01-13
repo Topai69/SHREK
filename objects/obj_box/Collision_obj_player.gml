@@ -13,10 +13,10 @@ if (!keyboard_check(ord("E"))) {
     }
 } else {
     // push the box in the direction of the player's movement
-    if (other.xspeed != 0) {
+    if (other.xspeed != 0 && !place_meeting(x + sign(xspeed), y, obj_ground) && !place_meeting(x + sign(xspeed), y, obj_movingPlatform)) {
         x += other.xspeed;
     }
-    if (other.yspeed != 0) {
+    if (other.yspeed != 0 && !place_meeting(x, y + sign(yspeed), obj_ground) && !place_meeting(x, y + sign(yspeed), obj_movingPlatform)) {
         y += other.yspeed;
     }
 }
