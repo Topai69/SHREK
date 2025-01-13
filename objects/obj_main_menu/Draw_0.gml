@@ -11,7 +11,7 @@ height = op_border * 2 + string_height(option[0, 0]) + (op_lenght-1)*op_space;
 
 ////////////draw background
 draw_sprite_ext(sprite_index, image_index, x, y, width/sprite_width, height/sprite_height, 0, c_white, 1);
-
+draw_sprite(spr_background,image_index,0,0);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
