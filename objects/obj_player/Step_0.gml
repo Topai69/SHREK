@@ -80,7 +80,6 @@ if place_meeting(x + 1, y, obj_wall1)
 {
 	has_collided = true;
 	// Allow a single jump from walls
-	show_debug_message(yspeed);
 	touched_wall_right = 1;
 	wall_slide_timer_left = 0.1;
 	face = WALL_RIGHT;
@@ -112,14 +111,12 @@ if place_meeting(x + 1, y, obj_wall1)
 			face = RIGHT
 		}
 	}
-	
 }
 if place_meeting(x - 1, y, obj_wall) 
 {
 	has_collided = true;
 	touched_wall_left = 1;
 	face = WALL_LEFT;
-	show_debug_message(yspeed);
 	wall_slide_timer_right = 0.1;
 
 	if jump_counter == 1 && jump_key_pressed 
@@ -150,7 +147,6 @@ if place_meeting(x - 1, y, obj_wall)
 		}
 	}
 }
-
 if platform 
 {
     // Compare y positions
