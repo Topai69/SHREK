@@ -348,6 +348,12 @@ if place_meeting(x,y, obj_void)
 	camera_set_view_pos(view_camera[0],0,0);
 }
 
+if place_meeting(x, y, obj_spike){
+    obj_player.x = global.checkpoint_x;  // Set the player's x position to the last checkpoint's x 
+    obj_player.y = global.checkpoint_y;  // Set the player's y position to the last checkpoint's y
+	camera_set_view_pos(view_camera[0],0,0);
+}
+
 ////////////////////////////////////////////////
 // FACE ORIENTATION
 ////////////////////////////////////////////////

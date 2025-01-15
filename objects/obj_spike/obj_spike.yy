@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_stalagmite",
+  "%Name":"obj_spike",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_stalagmite",
+  "name":"obj_spike",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_ground",
-    "path":"objects/obj_ground/obj_ground.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_stalagmite",
-    "path":"sprites/spr_stalagmite/spr_stalagmite.yy",
+    "name":"spr_spike",
+    "path":"sprites/spr_spike/spr_spike.yy",
   },
   "spriteMaskId":null,
   "visible":true,
