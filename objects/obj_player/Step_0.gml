@@ -12,17 +12,18 @@ var on_ground = place_meeting(x, y + 1, obj_ground) ||
                 place_meeting(x, y + 1, obj_movingPlatform) || 
                 place_meeting(x,y+30,obj_oneway_platform) ||
                 place_meeting(x, y + 1, obj_box);
-
+//////////////////////////////////////////////
 /////////////////CAMERA/////////////////////
+////////////////////////////////////////
 // Get the player's position
-var player_x = x;
-var player_y = y;
+global.player_x = x;
+global.player_y = y;
 
 // Get the camera ID
 var cam = view_camera[0];
 
 // Set the camera position to center on the player
-camera_set_view_pos(cam, player_x - (camera_get_view_width(cam) / 2), player_y - (camera_get_view_height(cam) / 2));
+camera_set_view_pos(cam, global.player_x - (camera_get_view_width(cam) / 2), global.player_y - (camera_get_view_height(cam) / 2));
 
 ////////////////////////////////////////////////
 // SPEEDS AND GRAVITY
@@ -60,7 +61,6 @@ if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed
     }
     yspeed = 0;
 }
-
 ////////////////////////////////////////////////
 // RESET JUMP COUNT ON COLLISION
 ////////////////////////////////////////////////
