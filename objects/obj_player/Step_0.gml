@@ -193,10 +193,10 @@ if place_meeting(x-1,y,obj_wall) && place_meeting(x,y+1,obj_ground)
 {
 	face = LEFT;
 }
-if place_meeting(x+1,y,obj_wall1) && place_meeting(x,y+1,obj_ground)
-{
-	face = RIGHT;
-}
+//if place_meeting(x+1,y,obj_wall1) && place_meeting(x,y+1,obj_ground)
+//{
+//	face = RIGHT;
+//}
 
 ////////////////////////////////////////////////
 // HANDLE JUMP INPUT
