@@ -380,12 +380,27 @@ if !on_ground
             face = JUMP_LEFT;
             if (sprite_index == spr_jump_left) 
 			{
-                image_index = 4; //falling frame
+                image_index = 4; 
                 image_speed = 0;
             }
         }
     }
+}
+
+if (keyboard_check_pressed(ord("H"))) {
+    previous_face = face;  
+    face = HAMMER;
+    image_index = 0;
+    image_speed = 1; 
 } 
+
+if (face == HAMMER) {
+    if (image_index >= image_number - 1 || !keyboard_check(ord("H"))) {
+        face = previous_face;  
+        image_speed = 1;  
+    }
+}
+
 sprite_index = sprite[face];
 
 ////////////////////////////////////////////////
