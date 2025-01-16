@@ -281,7 +281,7 @@ if place_meeting(x, y + yspeed, obj_movingPlatform) {
 // MOVING BOX LOGIC
 ////////////////////////////////////////////////
 
-//climbing
+//climbingg
 if (place_meeting(x, y + yspeed, obj_box)) {
     while (!place_meeting(x, y + sign(yspeed), obj_box)) {
         y += sign(yspeed);
