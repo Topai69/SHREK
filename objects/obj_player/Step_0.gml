@@ -348,6 +348,12 @@ if place_meeting(x,y, obj_void)
 	camera_set_view_pos(view_camera[0],0,0);
 }
 
+if place_meeting(x, y, obj_spike){
+    obj_player.x = global.checkpoint_x;  // Set the player's x position to the last checkpoint's x 
+    obj_player.y = global.checkpoint_y;  // Set the player's y position to the last checkpoint's y
+	camera_set_view_pos(view_camera[0],0,0);
+}
+
 ////////////////////////////////////////////////
 // FACE ORIENTATION
 ////////////////////////////////////////////////
@@ -380,12 +386,27 @@ if !on_ground
             face = JUMP_LEFT;
             if (sprite_index == spr_jump_left) 
 			{
-                image_index = 4; //falling frame
+                image_index = 4; 
                 image_speed = 0;
             }
         }
     }
+}
+
+if (keyboard_check_pressed(ord("H"))) {
+    previous_face = face;  
+    face = HAMMER;
+    image_index = 0;
+    image_speed = 1; 
 } 
+
+if (face == HAMMER) {
+    if (image_index >= image_number - 1 || !keyboard_check(ord("H"))) {
+        face = previous_face;  
+        image_speed = 1;  
+    }
+}
+
 sprite_index = sprite[face];
 
 ////////////////////////////////////////////////
