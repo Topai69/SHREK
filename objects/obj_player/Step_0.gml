@@ -291,7 +291,7 @@ if (place_meeting(x, y + yspeed, obj_box)) {
 
 //horinzontal box movement
 if (keyboard_check(ord("E"))) { 
-    var box = instance_place(x + xspeed, y, obj_box);
+    var box = instance_place(x - xspeed, y, obj_box);
     if (box != noone) {
         if (!place_meeting(box.x + xspeed, box.y, obj_ground) && 
             !place_meeting(box.x + xspeed, box.y, obj_wall) &&

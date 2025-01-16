@@ -16,5 +16,7 @@ option[1, 1] = "Brightness"
 option[1, 2] = "Controls"
 option[1, 3] = "Back"
 
+title[0, 0] = "GRIEF"
+
 op_lenght = array_length(option);
 menu_level = 0;
