@@ -29,7 +29,7 @@ if accept_key == true
 		switch(pos)
 			{
 			///start game///
-			case 0: room_goto_next(); break;
+			case 0: room_goto_next();  break;
 			///settings/////
 			case 1: menu_level = 1; break;
 			/////quit////

@@ -24,7 +24,8 @@ touched_wall_left = 0;
 touched_wall_right = 0;
 //collision
 has_collided = false;
-
+global.on_plate = false;
+global.paused_game = false;
 //face_orientation
 sprite[RIGHT] = spr_walking_right;
 sprite[LEFT] = spr_walking_left;

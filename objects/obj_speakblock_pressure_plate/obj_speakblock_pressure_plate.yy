@@ -1,12 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_settings",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_speakblock_pressure_plate",
+  "eventList":[],
   "managed":true,
-  "name":"obj_settings",
+  "name":"obj_speakblock_pressure_plate",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_speakblock_pressure_plate",
+    "path":"sprites/spr_speakblock_pressure_plate/spr_speakblock_pressure_plate.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

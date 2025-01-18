@@ -12,7 +12,8 @@ var on_ground = place_meeting(x, y + 1, obj_ground) ||
                 place_meeting(x, y + 1, obj_movingPlatform) || 
                 place_meeting(x,y+30,obj_oneway_platform) ||
                 place_meeting(x, y + 1, obj_box);
-				
+
+
 //window_set_fullscreen(true);
 //////////////////////////////////////////////
 /////////////////CAMERA/////////////////////
@@ -195,10 +196,10 @@ if place_meeting(x-1,y,obj_wall) && place_meeting(x,y+1,obj_ground)
 {
 	face = LEFT;
 }
-//if place_meeting(x+1,y,obj_wall1) && place_meeting(x,y+1,obj_ground)
-//{
-//	face = RIGHT;
-//}
+if place_meeting(x+1,y,obj_wall1) && place_meeting(x,y+1,obj_ground)
+{
+	face = RIGHT;
+}
 
 ////////////////////////////////////////////////
 // HANDLE JUMP INPUT
@@ -411,6 +412,19 @@ if (face == HAMMER) {
 
 sprite_index = sprite[face];
 
+///////////////////////////////////////
+/////////PRESSURE PLATE FOR SPEAKBOX///////////////
+/////////////////////////////////////////////////
+
+if place_meeting(x,y +1,obj_speakblock_pressure_plate)
+{
+	global.on_plate = true;
+}
+else
+{
+	global.on_plate = false;
+}
+
 ////////////////////////////////////////////////
 // COLLISION
 ////////////////////////////////////////////////
@@ -432,11 +446,20 @@ if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed
 }
 //////////////////////////////////////////////
 ////pause///
+////////
 
-if global.is_paused == true
+if global.pause == true
 {
 yspeed = 0;
 xspeed = 0;
+image_index = 0;
+}
+if global.paused_game == true
+{
+	yspeed = 0;
+	xspeed = 0;
+	image_index = 0;
+	face = LEFT;
 }
 ////////////////////////////////////////////////
 // MOVE X Y
