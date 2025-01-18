@@ -127,6 +127,7 @@
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
     {"id":{"name":"spr_wall1","path":"sprites/spr_wall1/spr_wall1.yy",},},
     {"id":{"name":"spr_wallslide_border","path":"sprites/spr_wallslide_border/spr_wallslide_border.yy",},},
+    {"id":{"name":"Sprite49","path":"sprites/Sprite49/Sprite49.yy",},},
     {"id":{"name":"tile_set_cave","path":"tilesets/tile_set_cave/tile_set_cave.yy",},},
     {"id":{"name":"ts_cave","path":"tilesets/ts_cave/ts_cave.yy",},},
     {"id":{"name":"ts_final","path":"tilesets/ts_final/ts_final.yy",},},

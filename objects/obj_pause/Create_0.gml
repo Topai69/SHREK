@@ -1,3 +1,5 @@
+global.is_paused = false;
+
 
 height = 104;
 width = 50;
@@ -7,7 +9,7 @@ op_space = 16;
 
 pos = 0;
 ///////////main menu//////////
-option[0, 0] = "Contonue";
+option[0, 0] = "Continue";
 option[0, 1] = "Settings";
 option[0, 2] = "Quit Game";
 

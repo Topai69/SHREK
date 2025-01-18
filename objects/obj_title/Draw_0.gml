@@ -15,5 +15,5 @@ y = camera_get_view_y(view_camera[0]) + 40; //+ camera_get_view_height(view_came
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
-	var _c = c_black;
+	var _c = c_white;
 	draw_text_color(x, y, title[0], _c, _c, _c, _c, 1)

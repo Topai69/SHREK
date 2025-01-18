@@ -1,6 +1,6 @@
-up_key = keyboard_check_pressed(vk_up);
-down_key = keyboard_check_pressed(vk_down);
-accept_key = keyboard_check_released(vk_enter);
+up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
+down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
+accept_key = keyboard_check_released(vk_enter) || keyboard_check_pressed(vk_space);
 
 op_lenght = array_length(option[menu_level]);
 
@@ -43,7 +43,7 @@ if accept_key == true
 			{
 				///window size///
 				case 0:
-				
+				window_set_size(, height);
 				break;
 				///brightness////
 				case 1:

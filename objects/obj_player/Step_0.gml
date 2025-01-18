@@ -12,6 +12,8 @@ var on_ground = place_meeting(x, y + 1, obj_ground) ||
                 place_meeting(x, y + 1, obj_movingPlatform) || 
                 place_meeting(x,y+30,obj_oneway_platform) ||
                 place_meeting(x, y + 1, obj_box);
+				
+//window_set_fullscreen(true);
 //////////////////////////////////////////////
 /////////////////CAMERA/////////////////////
 ////////////////////////////////////////
@@ -428,7 +430,14 @@ if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed
     }
     yspeed = 0;
 }
+//////////////////////////////////////////////
+////pause///
 
+if global.is_paused == true
+{
+yspeed = 0;
+xspeed = 0;
+}
 ////////////////////////////////////////////////
 // MOVE X Y
 ////////////////////////////////////////////////

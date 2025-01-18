@@ -20,7 +20,7 @@ draw_set_halign(fa_left);
 
 for (var i = 0; i < op_lenght; i++)
 {
-	var _c = c_black;
+	var _c = c_white;
 	if pos == i
 	{
 		_c = c_yellow;
