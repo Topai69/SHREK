@@ -6,8 +6,8 @@ function scr_game_text(_text_id)
 		case "npc 1":
 		scr_text("Hey, are you okay?");
 		scr_text("I think so... maybe. Just having a bad day.");
-			scr_option("Are you stuck here too?", "npc 1 - ask")
-			scr_option("Womp womp", "npc 1 - mean")
+			scr_option("Are you stuck here too?", "npc 1 - ask");
+			scr_option("Womp womp", "npc 1 - mean");
 		break;
 		
 		case "npc 1 - ask":
@@ -18,7 +18,7 @@ function scr_game_text(_text_id)
 		break;
 		
 		case "npc 1 - mean":
-		scr_text("You’re so mean");
+		scr_text("You’re so mean...");
 		global.paused_game = false;
 		break;
 		
@@ -26,13 +26,19 @@ function scr_game_text(_text_id)
 		scr_text("Grieving?");
 		scr_text("*sound*");
 		scr_text("Oh, that must be the way out! Come on, let’s follow it!");
-			break;
+			scr_option("Wait!!", "npc 1 - wait");
+		break;
 			
 		
 		case "npc 1 - mean_2":
 		scr_text("Whaaat ? I don’t believe you. He’s gonna come back");
 		scr_text("*sound*");
 		scr_text("Oh, that must be the way out! Come on, let’s follow it!");
-			break;
+			scr_option("Wait!!", "npc 1 - wait");
+		break;
+		
+		case "npc 1 - wait":
+		scr_text("Wait!!");
+		global.paused_game = false;
 	}
 }
