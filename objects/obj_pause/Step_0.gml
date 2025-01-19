@@ -1,7 +1,7 @@
 up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
 down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
 accept_key = keyboard_check_released(vk_enter) || keyboard_check_released(vk_space);
-if (keyboard_check_pressed(ord("P")) && global.pause == false)
+if (keyboard_check(ord("P")) && global.pause == false)
 {
     global.pause = true; // Toggle pause state
 }
@@ -12,7 +12,8 @@ op_lenght = array_length(option[menu_level]);
 
 
 pos -= up_key - down_key;
-
+if global.pause = true
+{
 if pos >= op_lenght
 {
 	pos = 0;
@@ -41,7 +42,7 @@ if accept_key == true
 			/////restart////
 			case 2: room_goto_previous(); break;
 			////quit/////
-			case 3: game_end(); break;
+			case 3: game_end(); break; 
 			}
 		break;
 		
@@ -71,4 +72,5 @@ if accept_key == true
 			pos = 0;
 		}
 	op_lenght = array_length(option[menu_level]);
+}
 }
