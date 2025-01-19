@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_steps",
+  "%Name":"snd_voiceline",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":10.757664,
-  "name":"snd_steps",
+  "duration":8.099478,
+  "name":"snd_voiceline",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_steps.wav",
+  "soundFile":"snd_voiceline.wav",
   "type":0,
-  "volume":0.15,
+  "volume":0.1,
 }
