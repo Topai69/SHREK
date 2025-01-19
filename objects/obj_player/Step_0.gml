@@ -383,9 +383,10 @@ if place_meeting(x, y, obj_spike){
 ////////////////////////////////////////////////
 // FACE ORIENTATION
 ////////////////////////////////////////////////
-    image_speed = 1;
-    if (xspeed > 0) face = RIGHT;
-    if (xspeed < 0) face = LEFT;
+
+image_speed = 1;
+if (xspeed > 0) face = RIGHT;
+if (xspeed < 0) face = LEFT;
 	
 if !on_ground
 {
@@ -419,6 +420,7 @@ if !on_ground
     }
 }
 
+if (obj_player.can_use_hammer){
 if (keyboard_check_pressed(ord("H"))) {
     previous_face = face;  
     face = HAMMER;
@@ -432,12 +434,13 @@ if (face == HAMMER) {
         image_speed = 1;  
     }
 }
+}
 
 sprite_index = sprite[face];
 
-///////////////////////////////////////
-/////////PRESSURE PLATE FOR SPEAKBOX///////////////
-/////////////////////////////////////////////////
+////////////////////////////////////////////////
+// PRESSURE PLATE FOR SPEAKBOX
+////////////////////////////////////////////////
 
 if place_meeting(x,y +1,obj_speakblock_pressure_plate)
 {
@@ -467,9 +470,10 @@ if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed
     }
     yspeed = 0;
 }
-//////////////////////////////////////////////
-////pause///
-////////
+
+////////////////////////////////////////////////
+// PAUSE
+////////////////////////////////////////////////
 
 if global.pause == true
 {
@@ -484,6 +488,7 @@ if global.paused_game == true
 	image_index = 0;
 	face = LEFT;
 }
+
 ////////////////////////////////////////////////
 // MOVE X Y
 ////////////////////////////////////////////////

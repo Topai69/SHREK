@@ -11,6 +11,8 @@ wall_slide_timer_right = 0;
 global.checkpoint_x = x;  
 global.checkpoint_y = y;
 
+can_use_hammer = false;
+
 //jumping
 jump_speed = -2;
 health = 4;
