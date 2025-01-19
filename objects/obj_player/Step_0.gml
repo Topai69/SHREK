@@ -7,12 +7,21 @@ left_key = keyboard_check(ord("A")) || keyboard_check(vk_left);
 jump_key_pressed = keyboard_check_pressed(vk_space);
 jump_key_hold = keyboard_check(vk_space);
 
+if (keyboard_check(vk_left) || keyboard_check(vk_right)) {
+    if (!audio_is_playing(snd_steps)) {
+        audio_play_sound(snd_steps, 1, true); 
+    }
+} else {
+    if (audio_is_playing(snd_steps)) {
+        audio_stop_sound(snd_steps);
+    }
+}
+
 var platform = instance_place(x, y + 1, obj_oneway_platform);
 var on_ground = place_meeting(x, y + 1, obj_ground) || 
                 place_meeting(x, y + 1, obj_movingPlatform) || 
                 place_meeting(x,y+30,obj_oneway_platform) ||
                 place_meeting(x, y + 1, obj_box);
-
 
 //window_set_fullscreen(true);
 //////////////////////////////////////////////
@@ -188,6 +197,10 @@ if platform
 	}
 }
 
+if can_jump == true && jump_key_pressed && jump_counter == 0 {
+    audio_play_sound(snd_jump, 1, false);
+}
+
 ////////////////////////////////////////////////
 // WALL SLIDE FACE ORIENTATION
 ////////////////////////////////////////////////
@@ -321,6 +334,16 @@ if (keyboard_check(ord("E"))) {
             x = box.x + box.sprite_width + sprite_width/2;
         }
         xspeed = 0;
+    }
+}
+
+if (place_meeting(x + xspeed, y + move_speed, obj_box)) {
+    if (!audio_is_playing(snd_movingBox)) {
+        audio_play_sound(snd_movingBox, 1, true); 
+    }
+} else {
+    if (audio_is_playing(snd_movingBox)) {
+        audio_stop_sound(snd_movingBox); 
     }
 }
 
