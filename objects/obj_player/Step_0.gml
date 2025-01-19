@@ -23,7 +23,6 @@ var on_ground = place_meeting(x, y + 1, obj_ground) ||
                 place_meeting(x,y+30,obj_oneway_platform) ||
                 place_meeting(x, y + 1, obj_box);
 
-
 //window_set_fullscreen(true);
 //////////////////////////////////////////////
 /////////////////CAMERA/////////////////////
@@ -196,6 +195,10 @@ if platform
 			jump_counter = 1;
 		}
 	}
+}
+
+if can_jump == true && jump_key_pressed && jump_counter == 0 {
+    audio_play_sound(snd_jump, 1, false);
 }
 
 ////////////////////////////////////////////////
