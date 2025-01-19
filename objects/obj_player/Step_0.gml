@@ -337,6 +337,16 @@ if (keyboard_check(ord("E"))) {
     }
 }
 
+if (place_meeting(x + xspeed, y + move_speed, obj_box)) {
+    if (!audio_is_playing(snd_movingBox)) {
+        audio_play_sound(snd_movingBox, 1, true); 
+    }
+} else {
+    if (audio_is_playing(snd_movingBox)) {
+        audio_stop_sound(snd_movingBox); 
+    }
+}
+
 ////////////////////////////////////////////////
 // FALLING SPIKES
 ////////////////////////////////////////////////

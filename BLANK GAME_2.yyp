@@ -80,6 +80,7 @@
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},
     {"id":{"name":"snd_background_music","path":"sounds/snd_background_music/snd_background_music.yy",},},
     {"id":{"name":"snd_jump","path":"sounds/snd_jump/snd_jump.yy",},},
+    {"id":{"name":"snd_movingBox","path":"sounds/snd_movingBox/snd_movingBox.yy",},},
     {"id":{"name":"snd_steps","path":"sounds/snd_steps/snd_steps.yy",},},
     {"id":{"name":"snd_voiceline","path":"sounds/snd_voiceline/snd_voiceline.yy",},},
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
