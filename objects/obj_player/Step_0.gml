@@ -7,6 +7,16 @@ left_key = keyboard_check(ord("A")) || keyboard_check(vk_left);
 jump_key_pressed = keyboard_check_pressed(vk_space);
 jump_key_hold = keyboard_check(vk_space);
 
+if (keyboard_check(vk_left) || keyboard_check(vk_right)) {
+    if (!audio_is_playing(snd_steps)) {
+        audio_play_sound(snd_steps, 1, true); 
+    }
+} else {
+    if (audio_is_playing(snd_steps)) {
+        audio_stop_sound(snd_steps);
+    }
+}
+
 var platform = instance_place(x, y + 1, obj_oneway_platform);
 var on_ground = place_meeting(x, y + 1, obj_ground) || 
                 place_meeting(x, y + 1, obj_movingPlatform) || 
