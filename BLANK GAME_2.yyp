@@ -37,6 +37,7 @@
   },
   "name":"BLANK GAME_2",
   "resources":[
+    {"id":{"name":"obj_backgroundDrawing","path":"objects/obj_backgroundDrawing/obj_backgroundDrawing.yy",},},
     {"id":{"name":"obj_box","path":"objects/obj_box/obj_box.yy",},},
     {"id":{"name":"obj_bridges","path":"objects/obj_bridges/obj_bridges.yy",},},
     {"id":{"name":"obj_checkpoint_tree","path":"objects/obj_checkpoint_tree/obj_checkpoint_tree.yy",},},
@@ -79,6 +80,7 @@
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
     {"id":{"name":"spr_autotile","path":"sprites/spr_autotile/spr_autotile.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
+    {"id":{"name":"spr_backgroundDrawing","path":"sprites/spr_backgroundDrawing/spr_backgroundDrawing.yy",},},
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},
     {"id":{"name":"spr_bridge_2","path":"sprites/spr_bridge_2/spr_bridge_2.yy",},},
     {"id":{"name":"spr_bridge","path":"sprites/spr_bridge/spr_bridge.yy",},},
