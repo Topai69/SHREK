@@ -18,7 +18,9 @@
   "gridY":0,
   "height":3000,
   "HTile":false,
-  "layers":null,
+  "layers":[
+    {"$GMImageLayer":"","%Name":"34bf94e6-f84b-4af6-965b-0304c18dc50e","blendMode":0,"displayName":"default","isLocked":false,"name":"34bf94e6-f84b-4af6-965b-0304c18dc50e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+  ],
   "name":"spr_background",
   "nineSlice":null,
   "origin":0,
