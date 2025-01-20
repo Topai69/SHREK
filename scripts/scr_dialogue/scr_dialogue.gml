@@ -1,9 +1,10 @@
 /// @param text
-function scr_text( _text)
+function scr_text( _text,)
 {
 	text[page_number] = _text;
 	page_number++;
 }
+
 
 //// @param option
 //// @param link_id
