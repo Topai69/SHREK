@@ -1,6 +1,7 @@
 height = 104;
 width = 50;
-
+_width_screen = 800;
+_height_screen = 600;
 op_border = 6;
 op_space = 16;
 
@@ -11,12 +12,16 @@ option[0, 1] = "Settings";
 option[0, 2] = "Quit Game";
 
 ////////settings menu////////////
-option[1, 0] = "Window size"
-option[1, 1] = "Brightness"
-option[1, 2] = "Controls"
-option[1, 3] = "Back"
+option[1, 0] = "Window size";
+option[1, 1] = "Audio";
+option[1, 2] = "Controls";
+option[1, 3] = "Back";
 
-title[0, 0] = "GRIEF"
+////////window size menu////////
+option[2, 0] = "800x600";
+option[2, 1] = "1152x864";
+option[2, 2] = "Fullscreen";
+option[2, 3] = "Back";
 
 op_lenght = array_length(option);
 menu_level = 0;
