@@ -7,12 +7,22 @@ left_key = keyboard_check(ord("A")) || keyboard_check(vk_left);
 jump_key_pressed = keyboard_check_pressed(vk_space);
 jump_key_hold = keyboard_check(vk_space);
 
+if (keyboard_check(vk_left) || keyboard_check(vk_right)) {
+    if (!audio_is_playing(snd_steps)) {
+        audio_play_sound(snd_steps, 1, true); 
+    }
+} else {
+    if (audio_is_playing(snd_steps)) {
+        audio_stop_sound(snd_steps);
+    }
+}
+
 var platform = instance_place(x, y + 1, obj_oneway_platform);
 var on_ground = place_meeting(x, y + 1, obj_ground) || 
                 place_meeting(x, y + 1, obj_movingPlatform) || 
                 place_meeting(x,y+30,obj_oneway_platform) ||
                 place_meeting(x, y + 1, obj_box);
-				
+
 //window_set_fullscreen(true);
 //////////////////////////////////////////////
 /////////////////CAMERA/////////////////////
@@ -187,6 +197,10 @@ if platform
 	}
 }
 
+if can_jump == true && jump_key_pressed && jump_counter == 0 {
+    audio_play_sound(snd_jump, 1, false);
+}
+
 ////////////////////////////////////////////////
 // WALL SLIDE FACE ORIENTATION
 ////////////////////////////////////////////////
@@ -195,10 +209,10 @@ if place_meeting(x-1,y,obj_wall) && place_meeting(x,y+1,obj_ground)
 {
 	face = LEFT;
 }
-//if place_meeting(x+1,y,obj_wall1) && place_meeting(x,y+1,obj_ground)
-//{
-//	face = RIGHT;
-//}
+if place_meeting(x+1,y,obj_wall1) && place_meeting(x,y+1,obj_ground)
+{
+	face = RIGHT;
+}
 
 ////////////////////////////////////////////////
 // HANDLE JUMP INPUT
@@ -323,6 +337,16 @@ if (keyboard_check(ord("E"))) {
     }
 }
 
+if (place_meeting(x + xspeed, y + move_speed, obj_box)) {
+    if (!audio_is_playing(snd_movingBox)) {
+        audio_play_sound(snd_movingBox, 1, true); 
+    }
+} else {
+    if (audio_is_playing(snd_movingBox)) {
+        audio_stop_sound(snd_movingBox); 
+    }
+}
+
 ////////////////////////////////////////////////
 // FALLING SPIKES
 ////////////////////////////////////////////////
@@ -411,6 +435,26 @@ if (face == HAMMER) {
 
 sprite_index = sprite[face];
 
+///////////////////////////////////////
+/////////PRESSURE PLATE FOR SPEAKBOX///////////////
+/////////////////////////////////////////////////
+
+if place_meeting(x,y +1,obj_speakblock_pressure_plate)
+{
+	global.on_plate = true;
+}
+else
+{
+	global.on_plate = false;
+}
+////////////////////////////////////////////////////////
+////////////FINAL ANIMATION WARP OBJECT//////////////
+/////////////////////////////////////////////////////
+
+if place_meeting(x,y, obj_warp)
+{
+	room_goto_next();
+}
 ////////////////////////////////////////////////
 // COLLISION
 ////////////////////////////////////////////////
@@ -432,11 +476,19 @@ if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed
 }
 //////////////////////////////////////////////
 ////pause///
+////////
 
-if global.is_paused == true
+if global.pause == true
 {
 yspeed = 0;
 xspeed = 0;
+image_index = 0;
+}
+if global.paused_game == true
+{
+	yspeed = 0;
+	xspeed = 0;
+	image_index = 0;
 }
 ////////////////////////////////////////////////
 // MOVE X Y
@@ -449,6 +501,7 @@ y += yspeed;
 // IDLE ANIMATION
 ////////////////////////////////////////////////
 
-if (xspeed == 0 && yspeed == 0 && can_jump == true) {
+if (xspeed == 0 && yspeed == 0 && can_jump == true) 
+{
     image_index = 0;
 }

@@ -106,5 +106,8 @@ if draw_char == text_lenght[page] && page == page_number - 1
 ///draw the text
 var _drawtext = string_copy(text[page], 1, draw_char);
 draw_text_ext(_textb_x + border, _textb_y + border, _drawtext, line_sep, line_width);
+//draw_text_color(_textb_x + border, _textb_y + border, _drawtext, c_blue, c_blue, c_blue, c_blue, 1);
+//draw_text_ext_color(_textb_x + border, _textb_y + border, _drawtext, line_sep, line_width, text_color, text_color, text_color, text_color, 1)
+
 
 

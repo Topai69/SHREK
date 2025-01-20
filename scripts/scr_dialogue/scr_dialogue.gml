@@ -1,9 +1,10 @@
 /// @param text
-function scr_text( _text)
+function scr_text( _text,)
 {
 	text[page_number] = _text;
 	page_number++;
 }
+
 
 //// @param option
 //// @param link_id
@@ -20,6 +21,9 @@ function create_textbox(_text_id)
 {
 	with (instance_create_depth(0, 0, -9999, obj_textbox))
 	{
+		if (!audio_is_playing(snd_voiceline)) {
+            audio_play_sound(snd_voiceline, 1, false);
+        }
 		scr_game_text(_text_id);
 	}
 }

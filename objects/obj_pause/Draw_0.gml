@@ -1,6 +1,6 @@
-if (global.is_paused)
+if (global.pause)
 {
-draw_set_font(global.font_pause);
+draw_set_font(global.font_main);
 
 var _new_w = 0;
 for (var i = 0; i < op_lenght; i++)

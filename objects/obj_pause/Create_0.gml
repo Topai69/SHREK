@@ -1,4 +1,4 @@
-global.is_paused = false;
+global.pause = false;
 
 
 height = 104;
@@ -11,7 +11,8 @@ pos = 0;
 ///////////main menu//////////
 option[0, 0] = "Continue";
 option[0, 1] = "Settings";
-option[0, 2] = "Quit Game";
+option[0, 2] = "Restart";
+option[0, 3] = "Quit Game";
 
 ////////settings menu////////////
 option[1, 0] = "Window size"
