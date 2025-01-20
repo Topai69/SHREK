@@ -1,4 +1,4 @@
-if (distance_to_object(obj_player) < 8 && keyboard_check_pressed(ord("H"))){
+if (distance_to_object(obj_player) < 8 && keyboard_check_pressed(ord("V"))){
 	if (obj_player.can_use_hammer) {
     hit -= 1;
 
@@ -14,6 +14,6 @@ if (distance_to_object(obj_player) < 8 && keyboard_check_pressed(ord("H"))){
         instance_destroy();
     }
  } else {
-	 show_message("NO");
+	 show_message("You need something");
 }
 }

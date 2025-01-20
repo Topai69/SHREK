@@ -35,6 +35,8 @@ sprite[WALL_RIGHT] = spr_wall_slide_right;
 sprite[WALL_LEFT] = spr_wall_slide_left;
 sprite[JUMP_LEFT] = spr_jump_left;
 sprite[JUMP_RIGHT] = spr_jump_right;
+sprite[MOVE_RIGHT] = spr_movingbox_right;
+sprite[MOVE_LEFT] = spr_movingbox_left;
 sprite[HAMMER] = spr_hammering;
 face = RIGHT;
 

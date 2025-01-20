@@ -5,3 +5,5 @@
 #macro JUMP_RIGHT 4
 #macro JUMP_LEFT 5
 #macro HAMMER 6
+#macro MOVE_RIGHT 7
+#macro MOVE_LEFT 8

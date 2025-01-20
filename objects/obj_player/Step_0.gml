@@ -317,8 +317,10 @@ if (keyboard_check(ord("E"))) {
             
             //keep player close to the box
             if (xspeed > 0) {
+                face = MOVE_RIGHT;
                 x = box.x - sprite_width/2; 
             } else if (xspeed < 0) {
+                face = MOVE_LEFT;
                 x = box.x + box.sprite_width + sprite_width/2;
             }
         } else {
@@ -326,6 +328,9 @@ if (keyboard_check(ord("E"))) {
         }
     }
 } else { 
+    if (face == MOVE_RIGHT) face = RIGHT;
+    if (face == MOVE_LEFT) face = LEFT;
+
     var box = instance_place(x + xspeed, y, obj_box);
     if (box != noone) {
         if (x < box.x) {
@@ -335,6 +340,8 @@ if (keyboard_check(ord("E"))) {
         }
         xspeed = 0;
     }
+
+    sprite_index = sprite[face];
 }
 
 if (place_meeting(x + xspeed, y + move_speed, obj_box)) {
@@ -421,7 +428,7 @@ if !on_ground
 }
 
 if (obj_player.can_use_hammer){
-if (keyboard_check_pressed(ord("H"))) {
+if (keyboard_check_pressed(ord("V"))) {
     previous_face = face;  
     face = HAMMER;
     image_index = 0;
@@ -429,7 +436,7 @@ if (keyboard_check_pressed(ord("H"))) {
 } 
 
 if (face == HAMMER) {
-    if (image_index >= image_number - 1 || !keyboard_check(ord("H"))) {
+    if (image_index >= image_number - 1 || !keyboard_check(ord("V"))) {
         face = previous_face;  
         image_speed = 1;  
     }
