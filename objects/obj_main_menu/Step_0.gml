@@ -49,7 +49,7 @@ if accept_key == true
 				case 0:
 				menu_level = 2;
 				break;
-				///brightness////
+				///Audio////
 				case 1:
 			
 				break;
@@ -60,7 +60,7 @@ if accept_key == true
 				///back////
 				case 3: menu_level = 0; break;
 			}
-			
+		///////////window size///////
 		case 2:
 		switch(pos)
 			{
@@ -69,7 +69,6 @@ if accept_key == true
 				 _width_screen = 800;
 				 _height_screen = 600;
 				window_set_size(_width_screen,_height_screen);
-				
 				break;
 				///1280x720////
 				case 1:
