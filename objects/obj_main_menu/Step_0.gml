@@ -1,6 +1,6 @@
 up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
 down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
-accept_key = keyboard_check_released(vk_enter) || keyboard_check_pressed(vk_space);
+accept_key = keyboard_check_released(vk_enter) || keyboard_check_released(vk_space);
 
 var display_width = display_get_width();
 var display_height = display_get_height();
@@ -9,10 +9,9 @@ window_set_position((display_width - _width_screen) / 2, (display_height - _heig
 op_lenght = array_length(option[menu_level]);
 
 
-
-
 pos -= up_key - down_key;
 
+///////////////////
 if pos >= op_lenght
 {
 	pos = 0;
@@ -21,6 +20,7 @@ if pos < 0
 {
 	pos = op_lenght - 1;
 }
+////////////////////
 show_debug_message(pos);
 if accept_key == true
 {
@@ -50,9 +50,7 @@ if accept_key == true
 				menu_level = 2;
 				break;
 				///Audio////
-				case 1:
-			
-				break;
+				case 1: menu_level = 3; break;
 				///controls////
 				case 2: 
 			
@@ -85,6 +83,33 @@ if accept_key == true
 				///back////
 				case 3: menu_level = 0; break;
 			}
+		case 3:
+		switch(pos)
+			{
+				case 0:
+				audio_sound_gain(snd_background_music, 0, 2);
+				break;
+				
+				case 1:
+				audio_sound_gain(snd_background_music, 0.25, 2);
+				break;
+				
+				case 2:
+				audio_sound_gain(snd_background_music, 0.50, 2);
+				break;
+				
+				case 3:
+				audio_sound_gain(snd_background_music, 0.75, 2);
+				break;
+				
+				case 4:
+				audio_sound_gain(snd_background_music, 1, 2);
+				break;
+				
+				case 5:
+				menu_level = 0; break;
+			}
+	
 		if _sml != menu_level
 			{
 				pos = 0;

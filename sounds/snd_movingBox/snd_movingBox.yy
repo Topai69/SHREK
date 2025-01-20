@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.050667,
+  "duration":3.733333,
   "name":"snd_movingBox",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_movingBox.wav",
   "type":0,
-  "volume":0.5,
+  "volume":1.0,
 }
