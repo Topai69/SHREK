@@ -504,6 +504,39 @@ if global.paused_game == true
 }
 
 ////////////////////////////////////////////////
+// SPAWNS SYSTEM
+////////////////////////////////////////////////
+
+//start point
+if keyboard_check(ord("1")) {
+    x = 192
+    y = 816
+}
+
+//anger stage
+if keyboard_check(ord("2")) {
+    x = 848
+    y = 1040
+}
+
+//moving platforms
+if keyboard_check(ord("3")) {
+    x = 704
+    y = 1184
+}
+
+if keyboard_check(ord("4")) {
+    x = 1984
+    y = 1120
+}
+
+//final npc
+if keyboard_check(ord("5")) {
+    x = 2992
+    y = 880
+}
+
+////////////////////////////////////////////////
 // MOVE X Y
 ////////////////////////////////////////////////
 
