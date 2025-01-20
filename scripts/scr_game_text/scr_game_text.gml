@@ -19,6 +19,7 @@ function scr_game_text(_text_id)
 		
 		case "npc 1 - mean":
 		scr_text("You’re so mean...");
+		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
 		
@@ -39,6 +40,7 @@ function scr_game_text(_text_id)
 		
 		case "npc 1 - wait":
 		scr_text("Wait!!");
+		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
 		
@@ -77,11 +79,13 @@ function scr_game_text(_text_id)
 		
 		case "npc 2 - thanks":
 		scr_text("Thank you!");
+		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
 		
 		case "npc 2 - hammer":
 		scr_text("Wow! A hammer! Can I try it on you?");
+		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
 		
@@ -111,6 +115,7 @@ function scr_game_text(_text_id)
 			
 		case "npc 3 - agree":
 		scr_text("You're right");
+		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
 		
@@ -122,6 +127,7 @@ function scr_game_text(_text_id)
 			
 		case "npc 3 - mean 2":
 		scr_text("I guess.");
+		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
 		
@@ -153,6 +159,7 @@ function scr_game_text(_text_id)
 			
 		case "npc 4 - go":
 		scr_text("Let’s go. I’ll help you.");
+		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
 		
@@ -178,6 +185,7 @@ function scr_game_text(_text_id)
 			
 		case "npc 5 - agree":
 		scr_text("You’re probably right.");
+		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
 	}

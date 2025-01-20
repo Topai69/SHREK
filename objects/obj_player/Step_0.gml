@@ -464,6 +464,7 @@ else
 if place_meeting(x,y, obj_warp)
 {
 	room_goto_next();
+	audio_stop_all();
 }
 ////////////////////////////////////////////////
 // COLLISION

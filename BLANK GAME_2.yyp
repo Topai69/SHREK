@@ -3,6 +3,8 @@
   "%Name":"BLANK GAME_2",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"ag_music","name":"ag_music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"ag_sfx","name":"ag_sfx","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -61,6 +63,7 @@
     {"id":{"name":"obj_message_4","path":"objects/obj_message_4/obj_message_4.yy",},},
     {"id":{"name":"obj_message_5","path":"objects/obj_message_5/obj_message_5.yy",},},
     {"id":{"name":"obj_movingPlatform","path":"objects/obj_movingPlatform/obj_movingPlatform.yy",},},
+    {"id":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},},
     {"id":{"name":"obj_oneway_platform","path":"objects/obj_oneway_platform/obj_oneway_platform.yy",},},
     {"id":{"name":"obj_pause","path":"objects/obj_pause/obj_pause.yy",},},
     {"id":{"name":"obj_pauser","path":"objects/obj_pauser/obj_pauser.yy",},},
