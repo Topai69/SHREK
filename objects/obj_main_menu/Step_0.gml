@@ -68,7 +68,7 @@ if accept_key == true
 				 _height_screen = 600;
 				window_set_size(_width_screen,_height_screen);
 				break;
-				///1280x720////
+				///1152x864////
 				case 1:
 				 _width_screen = 1152;
 				 _height_screen = 864;
@@ -91,19 +91,19 @@ if accept_key == true
 				break;
 				
 				case 1:
-				audio_sound_gain(snd_background_music, 0.25, 2);
+				audio_sound_gain(snd_background_music, 0.1, 2);
 				break;
 				
 				case 2:
-				audio_sound_gain(snd_background_music, 0.50, 2);
+				audio_sound_gain(snd_background_music, 0.25, 2);
 				break;
 				
 				case 3:
-				audio_sound_gain(snd_background_music, 0.75, 2);
+				audio_sound_gain(snd_background_music, 0.50, 2);
 				break;
 				
 				case 4:
-				audio_sound_gain(snd_background_music, 1, 2);
+				audio_sound_gain(snd_background_music, 0.6, 2);
 				break;
 				
 				case 5:
