@@ -1,10 +1,11 @@
 up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
 down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
 accept_key = keyboard_check_released(vk_enter) || keyboard_check_released(vk_space);
-if (keyboard_check(ord("P")) && global.pause == false)
+if (keyboard_check_released(ord("P")) && global.pause == false)
 {
-    global.pause = true; // Toggle pause state
+    global.pause = true; // pause game
 }
+
 
 op_lenght = array_length(option[menu_level]);
 
@@ -37,35 +38,12 @@ if accept_key == true
 			case 0: instance_deactivate_object(obj_pause); instance_activate_object(obj_pause);
 			global.pause = false;
 			break;
-			///settings/////
-			case 1: menu_level = 1; break;
 			/////restart////
-			case 2: room_goto_previous(); break;
+			case 1: room_goto_previous(); break;
 			////quit/////
-			case 3: game_end(); break; 
+			case 2: game_end(); break; 
 			}
 		break;
-		
-		///settings////
-		case 1:
-		switch(pos)
-			{
-				///window size///
-				case 0:
-				
-				break;
-				///brightness////
-				case 1:
-			
-				break;
-				///controls////
-				case 2: 
-			
-				break;
-				///back////
-				case 3: menu_level = 0; break;
-			}
-			break;
 	}
 	if _sml != menu_level
 		{

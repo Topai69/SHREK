@@ -17,8 +17,7 @@ option[0, 2] = "Quit Game";
 ////////settings menu////////////
 option[1, 0] = "Window size";
 option[1, 1] = "Audio";
-option[1, 2] = "Controls";
-option[1, 3] = "Back";
+option[1, 2] = "Back";
 
 ////////window size menu////////
 option[2, 0] = "800x600";

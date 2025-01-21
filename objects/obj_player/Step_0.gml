@@ -7,6 +7,7 @@ left_key = keyboard_check(ord("A")) || keyboard_check(vk_left);
 jump_key_pressed = keyboard_check_pressed(vk_space);
 jump_key_hold = keyboard_check(vk_space);
 
+
 if (keyboard_check(vk_left) || keyboard_check(vk_right)) {
     if (!audio_is_playing(snd_steps)) {
         audio_play_sound(snd_steps, 1, true); 
@@ -58,7 +59,7 @@ yspeed += grav;
 // COLLISION
 ////////////////////////////////////////////////
 
-if place_meeting(x + xspeed, y, obj_ground) || place_meeting(x + xspeed, y, obj_movingPlatform) {
+if place_meeting(x + xspeed, y, obj_ground) || place_meeting(x + xspeed, y, obj_movingPlatform)  {
     var _pixelCheck = sign(xspeed);
     while !place_meeting(x + _pixelCheck, y, obj_ground) && !place_meeting(x + _pixelCheck, y, obj_movingPlatform) {
         x += _pixelCheck;
@@ -66,7 +67,7 @@ if place_meeting(x + xspeed, y, obj_ground) || place_meeting(x + xspeed, y, obj_
     xspeed = 0;
 }
 
-if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed, y + yspeed, obj_movingPlatform) {
+if place_meeting(x, y + yspeed, obj_ground) || place_meeting(x, y + yspeed, obj_movingPlatform)  {
     var _pixelCheck = sign(yspeed);
     while !place_meeting(x, y + _pixelCheck, obj_ground) && !place_meeting(x, y + _pixelCheck, obj_movingPlatform) {
         y += _pixelCheck;
@@ -478,7 +479,7 @@ if place_meeting(x + xspeed, y, obj_ground) || place_meeting(x + xspeed, y, obj_
     xspeed = 0;
 }
 
-if place_meeting(x + xspeed, y + yspeed, obj_ground) || place_meeting(x + xspeed, y + yspeed, obj_movingPlatform) {
+if place_meeting(x, y + yspeed, obj_ground) || place_meeting(x, y + yspeed, obj_movingPlatform) {
     var _pixelCheck = sign(yspeed);
     while !place_meeting(x, y + _pixelCheck, obj_ground) && !place_meeting(x, y + _pixelCheck, obj_movingPlatform) {
         y += _pixelCheck;
