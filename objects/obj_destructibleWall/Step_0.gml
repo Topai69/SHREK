@@ -1,4 +1,4 @@
-if (distance_to_object(obj_player) < 8 && keyboard_check_pressed(ord("V"))){
+if (distance_to_object(obj_player) < 8 && keyboard_check_pressed(ord("Q"))){
 	if (obj_player.can_use_hammer) {
     hit -= 1;
 

@@ -429,7 +429,7 @@ if !on_ground
 }
 
 if (obj_player.can_use_hammer){
-if (keyboard_check_pressed(ord("V"))) {
+if (keyboard_check_pressed(ord("Q"))) {
     previous_face = face;  
     face = HAMMER;
     image_index = 0;
