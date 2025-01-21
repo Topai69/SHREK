@@ -100,7 +100,8 @@ function scr_game_text(_text_id)
 		break;
 		
 		case "npc 3 - ask":
-		scr_text("Griefling: Nothing really. We sort of stopped seeing each other and both lost interest in trying.");
+		scr_text("Griefling: Nothing really.");
+		scr_text("Griefling: We sort of stopped seeing each other and both lost interest in trying.");
 		scr_text("Griefling:But it hurts. Yet I don’t want to try again.");
 		scr_text("Me: …");
 		scr_text("Griefling: I keep trying to blame something or someone, but I should probably face the facts… ");
@@ -145,10 +146,10 @@ function scr_game_text(_text_id)
 			break;
 			
 			case "npc 4 - mean":
-		scr_text("Hey ! It wasn’t ! He was sick ! You’re so mean!");
-		scr_text("He was my best friend. Always led the way when I didn’t know where to go.");
-		scr_text("Now he’s gone, and I feel.. empty.");
-		scr_text("Maybe I’m supposed to guide others... like my cat did for me.");
+		scr_text("Griefling: Hey ! It wasn’t ! He was sick ! You’re so mean!");
+		scr_text("Griefling: He was my best friend. Always led the way when I didn’t know where to go.");
+		scr_text("Griefling: Now he’s gone, and I feel.. empty.");
+		scr_text("Griefling: Maybe I’m supposed to guide others... like my cat did for me.");
 			scr_option("Let’s go. I’ll help you.", "npc 4 - go");
 		break;
 		
@@ -165,33 +166,34 @@ function scr_game_text(_text_id)
 		
 			
 		case "npc 4 - go":
-		scr_text("Let’s go. I’ll help you.");
+		scr_text("Me: Let’s go. I’ll help you.");
 		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
 		
 		case "npc 5":
-		scr_text("Hello there.");
-		scr_text("Hi? Is this a way out?");
-		scr_text("I believe so but I’m too scared to go through the bridge.");
-		scr_text("Gosh, I’m too old for this.");
-		scr_text("How did you get all the way here with all the rocks, and slopes and obstacles?");
-		scr_text("You mean how did I bring my old buttock all the way here? ");
-		scr_text("…");
-		scr_text("You see for a long time I didn’t want to believe that I got so old.");
-		scr_text("I felt like I had not lived and regretted it.");
-		scr_text("But once I began accepting it, I was able to advance.");
-		scr_text("Except for this little predicament here… but otherwise, everything was fine.");
-		scr_text("So you accepted it, and then, everything was smooth.");
-		scr_text("It didn’t always go the way I wanted but it did help.");
-		scr_text("Sometimes, you have go through the hardships to accept the way things are.");
-		scr_text("But it’s so hard.");
-		scr_text("I didn’t say it wasn’t.");
+		scr_text("Griefling: Hello there.");
+		scr_text("Me: Hi? Is this a way out?");
+		scr_text("Griefling: I believe so but I’m too scared to go through the bridge.");
+		scr_text("Griefling: Gosh, I’m too old for this.");
+		scr_text("Me: How did you get all the way here...");
+		scr_text("Me: With all the rocks, and slopes and obstacles?")
+		scr_text("Griefling: You mean how did I bring my old buttock all the way here? ");
+		scr_text("Me: …");
+		scr_text("Griefling: You see for a long time I didn’t want to believe that I got so old.");
+		scr_text("Griefling: I felt like I had not lived and regretted it.");
+		scr_text("Griefling: But once I began accepting it, I was able to advance.");
+		scr_text("Griefling: Except for this little predicament here…");
+		scr_text("Me: So you accepted it, and then, everything was smooth.");
+		scr_text("Griefling: It didn’t always go the way I wanted but it did help.");
+		scr_text("Griefling: Sometimes, you have go through the hardships to accept the way things are.");
+		scr_text("Me: But it’s so hard.");
+		scr_text("Griefling: I didn’t say it wasn’t.");
 			scr_option("You’re probably right.", "npc 5 - agree");
 		break;
 			
 		case "npc 5 - agree":
-		scr_text("You’re probably right.");
+		scr_text("Me: You’re probably right.");
 		audio_play_sound(snd_background_music, 1000, true);
 		global.paused_game = false;
 		break;
