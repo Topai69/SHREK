@@ -88,15 +88,15 @@ if accept_key == true
 				break;
 				
 				case 1:
-				audio_sound_gain(snd_background_music, 0.1, 2);
+				audio_sound_gain(snd_background_music, 0.05, 2);
 				break;
 				
 				case 2:
-				audio_sound_gain(snd_background_music, 0.2, 2);
+				audio_sound_gain(snd_background_music, 0.1, 2);
 				break;
 				
 				case 3:
-				audio_sound_gain(snd_background_music, 0.3, 2);
+				audio_sound_gain(snd_background_music, 0.2, 2);
 				break;
 				
 				case 4:
