@@ -437,7 +437,7 @@ if (keyboard_check_pressed(ord("Q"))) {
 } 
 
 if (face == HAMMER) {
-    if (image_index >= image_number - 1 || !keyboard_check(ord("V"))) {
+    if (image_index >= image_number - 1 || !keyboard_check(ord("Q"))) {
         face = previous_face;  
         image_speed = 1;  
     }
