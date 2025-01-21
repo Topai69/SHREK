@@ -51,12 +51,9 @@ if accept_key == true
 				break;
 				///Audio////
 				case 1: menu_level = 3; break;
-				///controls////
-				case 2: 
-			
-				break;
+
 				///back////
-				case 3: menu_level = 0; break;
+				case 2: menu_level = 0; break;
 			}
 		///////////window size///////
 		case 2:
@@ -95,22 +92,21 @@ if accept_key == true
 				break;
 				
 				case 2:
-				audio_sound_gain(snd_background_music, 0.25, 2);
+				audio_sound_gain(snd_background_music, 0.2, 2);
 				break;
 				
 				case 3:
-				audio_sound_gain(snd_background_music, 0.50, 2);
+				audio_sound_gain(snd_background_music, 0.3, 2);
 				break;
 				
 				case 4:
-				audio_sound_gain(snd_background_music, 0.6, 2);
+				audio_sound_gain(snd_background_music, 0.4, 2);
 				break;
 				
 				case 5:
 				menu_level = 0; break;
 			}
-	
-		if _sml != menu_level
+			if _sml != menu_level
 			{
 				pos = 0;
 			}
